@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.eec79a40.css",
+    "main.js": "/portfolio/static/js/main.a672eecd.js",
+    "static/media/vete-logo.png": "/portfolio/static/media/vete-logo.621d9bbbd9eeb76f040d.png",
+    "static/media/tesla-logo.png": "/portfolio/static/media/tesla-logo.ba18cbe776ad8b73513b.png",
+    "static/media/my-img-profile.png": "/portfolio/static/media/my-img-profile.2488639d799b47d9dba1.png",
+    "static/media/RbImg2b.jpg": "/portfolio/static/media/RbImg2b.63556d72186803020230.jpg",
+    "static/media/RbLogo.png": "/portfolio/static/media/RbLogo.341f589c46162e099cda.png",
+    "static/media/edusite-logo.jpg": "/portfolio/static/media/edusite-logo.085399627cc06dc29ec3.jpg",
+    "static/media/mi-logo.jpg": "/portfolio/static/media/mi-logo.bd78491ac6ab496a629c.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.eec79a40.css.map": "/portfolio/static/css/main.eec79a40.css.map",
+    "main.a672eecd.js.map": "/portfolio/static/js/main.a672eecd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eec79a40.css",
+    "static/js/main.a672eecd.js"
+  ]
+}
