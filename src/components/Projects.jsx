@@ -7,7 +7,7 @@ import projectimg5 from "../assets/img/tesla-logo.png";
 
 const Projects = () => {
   const githubIconButton1 = () => {
-    const gitHubProfileUrl = "https://github.com/rushibutani";
+    const gitHubProfileUrl = "https://github.com/rushibutani/portfolio";
     window.open(gitHubProfileUrl, "_blank");
   };
 
