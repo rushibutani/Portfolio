@@ -2,13 +2,18 @@ import React, { useRef, useState } from "react";
 import myImg2 from "../assets/img/RbImg2b.jpg";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-scroll";
-import { AiFillLinkedin } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import { GrInstagram } from "react-icons/gr";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
+import { BiSolidPhone } from "react-icons/bi";
 
 export default function Contact() {
+  const contactNumber = "+919638293911";
+  const handlecontactNumberClick = () => {
+    window.location.href = `tel:${contactNumber}`;
+  };
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -127,18 +132,18 @@ export default function Contact() {
                 </p>
               </div>
               <div className="contact-social-content link-linkedin">
-                <AiFillLinkedin
+                <BiSolidPhone
                   className="icon"
-                  onClick={handleLinkedInClick}
+                  onClick={handlecontactNumberClick}
                 />
                 <p>
                   <Link
-                    to="https://in.linkedin.com/in/rushibutani"
+                    to={`tel:${contactNumber}`}
                     target="_blank"
                     className="link-a"
-                    onClick={handleLinkedInClick}
+                    onClick={handlecontactNumberClick}
                   >
-                    LinkedIn
+                    +919638293911
                   </Link>
                 </p>
               </div>
