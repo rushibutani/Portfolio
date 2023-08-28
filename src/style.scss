@@ -21,6 +21,13 @@ $color-p: var(--color-p);
 $color-content-bg-dark: var(--color-content-bg-dark);
 $color-content-bg-light: var(--color-content-bg-light);
 $color-project-border: var(--color-project-border);
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 //---------------------Common CSS-------------------//
 * {
   margin: 0;
@@ -305,15 +312,14 @@ p {
 //---------------------------- Home Section ---------------------------//
 
 #home {
+  @include flex;
   background-color: $color-bg-section;
-  display: flex;
   align-items: center;
   min-height: 90vh;
   height: fit-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
   overflow: hidden;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 
@@ -410,14 +416,13 @@ p {
 //-------------------------- About Section ----------------------------//
 
 #about {
-  display: flex;
+  @include flex;
   flex-direction: column;
   align-items: center;
   min-height: 90vh;
   height: fit-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin: 0 auto;
   overflow: hidden;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -496,12 +501,10 @@ p {
 }
 
 #education {
+  @include flex;
   width: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 2rem;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 }
@@ -535,12 +538,10 @@ p {
 }
 
 #skills {
-  display: flex;
+  @include flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   gap: 2rem;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 }
@@ -619,12 +620,10 @@ p {
 }
 
 #interests {
-  display: flex;
+  @include flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   gap: 2rem;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 }
@@ -632,15 +631,13 @@ p {
 //-------------------- Projects Section --------------------//
 
 #projects {
+  @include flex;
   background-color: $color-bg-section;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: fit-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 
@@ -707,9 +704,8 @@ p {
 }
 
 .project-btn-container {
-  display: flex;
+  @include flex;
   align-items: center;
-  justify-content: center;
 
   .project-btn {
     font-weight: 600;
@@ -748,16 +744,14 @@ p {
 
 //--------------------------- Contact Section ----------------------//
 #contact {
-  display: flex;
+  @include flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 90vh;
   height: fit-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
   overflow: hidden;
-  margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 
