@@ -557,7 +557,7 @@ p {
     background-image: linear-gradient(
       to top,
       $color-content-bg-light 0%,
-      $color-black 80%,
+      $color-black 10%,
       $color-content-bg-light 100%
     );
   }
@@ -692,24 +692,24 @@ p {
         color: $color-hover;
         font-size: 1.1rem;
       }
-
-      .project-btn {
-        @include flex;
-        align-items: center;
-        overflow: hidden;
-        font-weight: 600;
-        font-size: 0.85rem;
-        border-radius: 0.4rem;
-        transition: all 0.3s ease;
-        padding: 0.6rem 5rem;
-        margin-top: 1rem;
-        color: $color-white;
-        border: $color-project-border 2px solid;
-        cursor: pointer;
-        background-color: $color-content-bg-dark;
-      }
     }
   }
+}
+
+.project-btn {
+  @include flex;
+  align-items: center;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease;
+  padding: 0.6rem 5rem;
+  margin-top: 1rem;
+  color: $color-white;
+  border: $color-project-border 2px solid;
+  cursor: pointer;
+  background-color: $color-content-bg-dark;
 }
 
 .project-card {
