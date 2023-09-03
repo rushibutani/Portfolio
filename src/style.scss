@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+@font-face {
+  font-family: Buffalo;
+  src: url(../src/assets/fonts/Buffalo.otf);
+}
 
 :root {
   --color-black: black;
@@ -38,7 +42,6 @@ $color-project-border: var(--color-project-border);
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   background-color: $color-black;
   color: $color-white;
   overflow: hidden;
@@ -49,8 +52,23 @@ html {
   scroll-behavior: smooth;
 }
 
+h1 {
+  font-family: "Lato", sans-serif;
+}
+
 p {
   color: $color-p;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.font-heading {
+  font-family: "Lato", sans-serif;
+}
+
+.font-content {
+  font-family: "Open Sans", sans-serif;
 }
 
 .flex {
@@ -152,7 +170,7 @@ p {
 //-------------------------- NavBar Section ------------------------//
 
 #navbar {
-  padding: 1rem 2rem;
+  padding: 1rem 3.5rem;
   height: 5rem;
   position: sticky;
   top: 0px;
@@ -164,25 +182,26 @@ p {
   justify-content: space-between;
   border-bottom: 1px solid $color-project-border;
 
-  .logo {
-    object-fit: cover;
-    width: 3rem;
-    height: 3rem;
-
-    &:hover {
-      cursor: default;
-    }
+  .logo-name {
+    font-family: Buffalo;
+    font-weight: 500;
+    font-size: 2.6rem;
+    text-align: center;
+    color: $color-p;
+    // span {
+    //   // color: $color-hover;
+    // }
   }
 
   .nav-links-n {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: $color-p;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .nav-link-item {
-      margin-left: 2rem;
+      margin-left: 2.3rem;
       cursor: pointer;
       transition: all 0.2s ease;
 
@@ -194,8 +213,11 @@ p {
 }
 
 .active {
-  font-weight: 500;
+  font-weight: 600;
   color: $color-white;
+  text-decoration: underline;
+  text-underline-offset: 27px;
+  text-decoration-thickness: 4px;
 }
 
 /* HAMBURGER MENU */
@@ -239,11 +261,7 @@ p {
       justify-content: center;
       gap: 1.5rem;
       background-color: $color-bg-section;
-      padding: 16px;
-
-      h3 {
-        color: $color-hover;
-      }
+      padding: 10px;
     }
 
     .show-menu-li {
@@ -256,7 +274,7 @@ p {
       color: $color-p;
       gap: 3rem;
       padding: 4rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
 
       .nav-link-item {
         cursor: pointer;
@@ -265,6 +283,14 @@ p {
         &:hover {
           color: $color-hover;
         }
+      }
+
+      .active {
+        font-weight: 500;
+        color: $color-white;
+        text-decoration: underline;
+        text-underline-offset: 15px;
+        text-decoration-thickness: 3px;
       }
     }
 
@@ -398,9 +424,11 @@ p {
     }
 
     .myname {
-      font-size: 3rem;
+      font-size: 3.5rem;
       text-align: center;
       color: $color-hover;
+      font-family: Buffalo;
+      font-weight: 400;
     }
   }
 }
@@ -660,8 +688,9 @@ p {
       }
 
       .project-title {
+        font-weight: 600;
         color: $color-hover;
-        font-size: normal;
+        font-size: 1.1rem;
       }
     }
   }
@@ -709,6 +738,7 @@ p {
 
   .project-btn {
     font-weight: 600;
+    font-size: 0.85rem;
     border-radius: 0.4rem;
     transition: all 0.3s ease;
     padding: 0.6rem 5rem;
@@ -781,8 +811,8 @@ p {
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       gap: 0.5rem;
-      // margin: 1rem;
       transition: all 0.3s ease;
 
       p {
@@ -816,6 +846,11 @@ p {
   cursor: pointer;
   text-decoration: none;
   text-decoration-color: $color-black;
+  font-size: 1.3rem;
+}
+
+.link-a-phone {
+  font-size: 1.2rem;
 }
 
 #form {
@@ -864,7 +899,7 @@ p {
 
 .form-btn {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
@@ -1025,7 +1060,7 @@ p {
     }
 
     .show-menu-li {
-      gap: 2.8rem;
+      gap: 3rem;
     }
 
     .show-menu-findme {
@@ -1294,7 +1329,6 @@ p {
   #education,
   #skills,
   #interests {
-    // width: 95%;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
   }
@@ -1334,7 +1368,6 @@ p {
 
   #about {
     ul {
-      // gap: 0.6rem;
       padding: 0 2rem;
 
       .about-list-before,

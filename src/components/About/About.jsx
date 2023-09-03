@@ -12,16 +12,16 @@ export default function About() {
     <>
       <section id="about">
         <p className="section-text-p1">Get To Know More About Rushi</p>
-        <h1 className="title">About Me</h1>
+        <h1 className="title font-heading">About Me</h1>
 
         <p className="about-me-text">
-          I'm a Front-end Developer based in Gujarat, India. Seeking many ways
-          to improve my skills through problem-solving and creating various
-          projects!
+          Hi, i'm Rushi Butani. I'm a Front-end Developer based in Gujarat,
+          India. Seeking many ways to improve my skills through problem-solving
+          and creating various projects!
         </p>
 
         <div className="w-full mb-40">
-          <ul className="flex items-center">
+          <ul className="flex items-center font-heading">
             <li
               onClick={() =>
                 setEducationData(true) &

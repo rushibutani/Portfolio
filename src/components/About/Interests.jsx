@@ -13,11 +13,11 @@ const Interests = () => {
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       id="interests"
     >
-      <div className="about-icon-h2">
+      <div className="about-icon-h2 font-heading">
         <TbMessage2Heart className="about-icon" />
         <h2>Interests</h2>
       </div>
-      <div className="skills-content flex justify-center items-center">
+      <div className="skills-content flex justify-center items-center font-content">
         <div className="skills-card-content">
           <div className="skills-icon">
             <MdTravelExplore />

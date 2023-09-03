@@ -18,11 +18,11 @@ const Skills = () => {
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       id="skills"
     >
-      <div className="about-icon-h2">
+      <div className="about-icon-h2 font-heading">
         <PiUserCircleGearBold className="about-icon" />
         <h2>Skills</h2>
       </div>
-      <div className="skills-content flex items-center">
+      <div className="skills-content flex items-center font-content">
         <div className="skills-card-content skills-icon-html">
           <div className="skills-icon">
             <AiFillHtml5 />

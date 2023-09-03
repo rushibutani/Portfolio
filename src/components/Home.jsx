@@ -39,7 +39,7 @@ export default function Home() {
         <div className="home-text-section">
           <p>Welcome To My World</p>
 
-          <h1 className="title">
+          <h1 className="title font-heading">
             Hello, i'm <span className="myname">Rushi Butani</span>
           </h1>
 
@@ -53,7 +53,7 @@ export default function Home() {
           </p>
           <div className="home-btn-container">
             <button
-              className="btn home-btn-one"
+              className="btn home-btn-one font-heading"
               onClick={() => {
                 handleDownload();
               }}
@@ -62,7 +62,7 @@ export default function Home() {
             </button>
 
             <button
-              className="btn home-btn-two"
+              className="btn home-btn-two font-heading"
               onClick={() => {
                 document
                   .getElementById("contact")

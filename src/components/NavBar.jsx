@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../style.scss";
-import MyLogo from "../assets/img/RbLogo.png";
 import { Link } from "react-scroll";
 import { LuMenu } from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa";
@@ -48,9 +47,11 @@ export default function NavBar() {
   return (
     <>
       <section id="navbar">
-        <img src={MyLogo} className="logo" alt="Website Logo" />
+        <div className="logo-name">
+          <span>R</span>ushi<span>B</span>utani
+        </div>
 
-        <div className="nav-links-n">
+        <div className="nav-links-n font-heading">
           <Link
             activeClass="active"
             to="home"
@@ -111,16 +112,17 @@ export default function NavBar() {
         >
           <div className="show-menu-content">
             <div className="show-menu-logoname">
-              <img src={MyLogo} alt="Website Logo" className="logo" />
-              <h3 className="flex items-center">Rushi Butani</h3>
+              <div className="logo-name">
+                <span>R</span>ushi<span>B</span>utani
+              </div>
             </div>
-            <div className="show-menu-li">
+            <div className="show-menu-li font-heading">
               <Link
                 activeClass="active"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-40}
+                offset={-100}
                 duration={200}
                 className="nav-link-item"
                 onClick={() => setShowMenu(false)}
@@ -164,7 +166,7 @@ export default function NavBar() {
                 Contact
               </Link>
             </div>
-            <div className="show-menu-findme">
+            <div className="show-menu-findme font-heading">
               <h3>Find me in</h3>
               <div className="flex show-menu-icon-container">
                 <span className="show-menu-icon" onClick={handleLinkedInClick}>

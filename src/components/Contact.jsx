@@ -110,7 +110,7 @@ export default function Contact() {
     <>
       <section id="contact">
         <p className="section-text-p1">Get in Touch</p>
-        <h1 className="title mb-40">Contact Me</h1>
+        <h1 className="title mb-40 font-heading">Contact Me</h1>
         <div className="contact-main-section">
           <div className="first-half-contact flex flex-col justify-center items-center">
             <div className="flex items-center contact-img">
@@ -125,7 +125,7 @@ export default function Contact() {
                     to="mailto:rushibutani@gmail.com"
                     target="_blank"
                     onClick={mailToButton}
-                    className="link-a"
+                    className="link-a font-heading"
                   >
                     rushibutani@gmail.com
                   </Link>
@@ -140,7 +140,7 @@ export default function Contact() {
                   <Link
                     to={`tel:${contactNumber}`}
                     target="_blank"
-                    className="link-a"
+                    className="link-a link-a-phone font-heading"
                     onClick={handlecontactNumberClick}
                   >
                     +919638293911
@@ -220,7 +220,11 @@ export default function Contact() {
                 ></textarea>
               </div>
               <div className="w-full flex items-center justify-center">
-                <button type="submit" onClick={handleSend} className="form-btn">
+                <button
+                  type="submit"
+                  onClick={handleSend}
+                  className="form-btn font-heading"
+                >
                   Send Message
                 </button>
               </div>

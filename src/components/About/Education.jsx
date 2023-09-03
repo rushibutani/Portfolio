@@ -11,7 +11,7 @@ const Education = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
     >
-      <div className="about-icon-h2">
+      <div className="about-icon-h2 font-heading">
         <PiCertificateDuotone className="about-icon" />
         <h2>Courses & Certifications</h2>
       </div>
@@ -28,7 +28,7 @@ const Education = () => {
         />
       </div>
 
-      <div className="about-icon-h2 flex items-center">
+      <div className="about-icon-h2 flex items-center font-heading">
         <FaGraduationCap className="about-icon" />
         <h2>Education</h2>
       </div>
