@@ -422,7 +422,7 @@ p {
     }
 
     .myname {
-      font-size: 3.5rem;
+      font-size: 4rem;
       text-align: center;
       color: $color-hover;
       font-family: Buffalo;
@@ -987,11 +987,6 @@ p {
   #home {
     min-height: 95vh;
     height: fit-content;
-
-    h1,
-    .myname {
-      font-size: 2.5rem;
-    }
   }
 
   .project-card-container {
@@ -1267,11 +1262,11 @@ p {
       .section-text-p2 {
         font-size: 1.4rem;
       }
-      .title {
-        font-size: 2rem;
+      h1 {
+        font-size: 2.5rem;
 
         .myname {
-          font-size: 2.5rem;
+          font-size: 3rem;
         }
       }
     }
@@ -1350,14 +1345,11 @@ p {
     }
 
     .home-text-section {
-      .section-text-p2 {
-        font-size: 1.4rem;
-      }
-      .title {
-        font-size: 1.7rem;
+      h1 {
+        font-size: 2.2rem;
 
         .myname {
-          font-size: 1.8rem;
+          font-size: 3rem;
         }
       }
     }
