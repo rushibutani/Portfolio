@@ -52,14 +52,13 @@ const Projects = () => {
               My Portfolio for introducing myself digitally. It is built using
               HTML, CSS, SASS, JavaScript and React.
             </p>
-            <div className="project-btn-container">
-              <button
-                className="project-btn font-heading"
-                onClick={githubIconButton1}
-              >
-                GitHub
-              </button>
-            </div>
+
+            <button
+              className="project-btn font-heading"
+              onClick={githubIconButton1}
+            >
+              GitHub
+            </button>
           </div>
         </div>
 
@@ -74,14 +73,13 @@ const Projects = () => {
               Static website to showcase the future of education. It is built
               using HTML, CSS and JavaScript.
             </p>
-            <div className="project-btn-container">
-              <button
-                className="project-btn font-heading"
-                onClick={githubIconButton2}
-              >
-                GitHub
-              </button>
-            </div>
+
+            <button
+              className="project-btn font-heading"
+              onClick={githubIconButton2}
+            >
+              GitHub
+            </button>
           </div>
         </div>
 
@@ -93,14 +91,13 @@ const Projects = () => {
             <h4 className="project-title font-content">Xiaomi Website Clone</h4>
 
             <p>Xiaomi official website clone using HTML, CSS and JavaScript.</p>
-            <div className="project-btn-container">
-              <button
-                className="project-btn font-heading"
-                onClick={githubIconButton3}
-              >
-                GitHub
-              </button>
-            </div>
+
+            <button
+              className="project-btn font-heading"
+              onClick={githubIconButton3}
+            >
+              GitHub
+            </button>
           </div>
         </div>
 
@@ -112,14 +109,13 @@ const Projects = () => {
             <h4 className="project-title font-content">Veterinary PSD Clone</h4>
 
             <p>Veterinary PSD website design built using HTML and CSS.</p>
-            <div className="project-btn-container">
-              <button
-                className="project-btn font-heading"
-                onClick={githubIconButton4}
-              >
-                GitHub
-              </button>
-            </div>
+
+            <button
+              className="project-btn font-heading"
+              onClick={githubIconButton4}
+            >
+              GitHub
+            </button>
           </div>
         </div>
 
@@ -131,14 +127,13 @@ const Projects = () => {
             <h4 className="project-title font-content">Tesla Website Clone</h4>
 
             <p>Tesla official website clone using HTML, CSS and JavaScript.</p>
-            <div className="project-btn-container">
-              <button
-                className="project-btn font-heading"
-                onClick={githubIconButton5}
-              >
-                GitHub
-              </button>
-            </div>
+
+            <button
+              className="project-btn font-heading"
+              onClick={githubIconButton5}
+            >
+              GitHub
+            </button>
           </div>
         </div>
       </div>
