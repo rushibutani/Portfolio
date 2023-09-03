@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.db1ebcce.css",
-    "main.js": "/portfolio/static/js/main.078f0cf3.js",
+    "main.css": "/portfolio/static/css/main.32748958.css",
+    "main.js": "/portfolio/static/js/main.81c38160.js",
     "static/media/vete-logo.png": "/portfolio/static/media/vete-logo.621d9bbbd9eeb76f040d.png",
     "static/media/tesla-logo.png": "/portfolio/static/media/tesla-logo.ba18cbe776ad8b73513b.png",
     "static/media/my-img-profile.png": "/portfolio/static/media/my-img-profile.2488639d799b47d9dba1.png",
     "static/media/RbImg2b.jpg": "/portfolio/static/media/RbImg2b.63556d72186803020230.jpg",
-    "static/media/RbLogo.png": "/portfolio/static/media/RbLogo.341f589c46162e099cda.png",
+    "static/media/Buffalo.otf": "/portfolio/static/media/Buffalo.02568d6513deec8e6404.otf",
     "static/media/edusite-logo.jpg": "/portfolio/static/media/edusite-logo.085399627cc06dc29ec3.jpg",
     "static/media/mi-logo.jpg": "/portfolio/static/media/mi-logo.bd78491ac6ab496a629c.jpg",
     "index.html": "/portfolio/index.html",
-    "main.db1ebcce.css.map": "/portfolio/static/css/main.db1ebcce.css.map",
-    "main.078f0cf3.js.map": "/portfolio/static/js/main.078f0cf3.js.map"
+    "main.32748958.css.map": "/portfolio/static/css/main.32748958.css.map",
+    "main.81c38160.js.map": "/portfolio/static/js/main.81c38160.js.map"
   },
   "entrypoints": [
-    "static/css/main.db1ebcce.css",
-    "static/js/main.078f0cf3.js"
+    "static/css/main.32748958.css",
+    "static/js/main.81c38160.js"
   ]
 }
