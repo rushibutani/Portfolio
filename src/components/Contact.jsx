@@ -234,17 +234,17 @@ export default function Contact() {
       </section>
 
       <footer id="footer">
-        <div className="flex show-menu-icon-container">
-          <span className="show-menu-icon" onClick={handleLinkedInClick}>
+        <div className="flex footer-icon-container">
+          <span className="footer-icon" onClick={handleLinkedInClick}>
             <FaLinkedin />
           </span>
-          <span className="show-menu-icon" onClick={handleInstagramClick}>
+          <span className="footer-icon" onClick={handleInstagramClick}>
             <GrInstagram />
           </span>
-          <span className="show-menu-icon" onClick={handleTwitterClick}>
+          <span className="footer-icon" onClick={handleTwitterClick}>
             <BsTwitter />
           </span>
-          <span className="show-menu-icon" onClick={handleFacebookClick}>
+          <span className="footer-icon" onClick={handleFacebookClick}>
             <BsFacebook />
           </span>
         </div>

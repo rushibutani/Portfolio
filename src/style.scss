@@ -222,111 +222,120 @@ p {
 
 /* HAMBURGER MENU */
 
-.new-menu {
-  display: inline-flex;
-  font-size: 2.6rem;
-  text-align: center;
-  align-items: center;
-  cursor: pointer;
-  border-radius: 9999px;
-  display: none;
-  color: $color-hover;
-  width: 3rem;
-  height: 3rem;
+.mob-menu {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
   background-color: $color-content-bg-dark;
+  cursor: pointer;
+  display: none;
+
+  .burger {
+    width: 100%;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 1.4px;
+      width: 50%;
+      margin: auto;
+      background-color: $color-hover;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      top: -5px;
+    }
+
+    &::before {
+      top: 5px;
+    }
+  }
+
+  .burgerActive {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
 }
 
 .show-menu-container {
-  width: 60%;
   height: 100%;
   background-color: $color-content-bg-dark;
   position: fixed;
-  top: 0;
   left: 0;
-  overflow-y: auto;
+  top: 0;
+  color: $color-white;
 
   .show-menu-content {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
+    justify-content: space-between;
 
-    .show-menu-logoname {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      background-color: $color-bg-section;
-      padding: 10px;
-    }
-
-    .show-menu-li {
+    .show-menu-logo-link {
       display: flex;
       flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-      color: $color-p;
-      gap: 3rem;
-      padding: 4rem;
-      font-size: 1.3rem;
+      gap: 12px;
+      margin-top: 20px;
 
-      .nav-link-item {
+      .show-menu-logo-name {
+        color: $color-p;
+        margin-bottom: 40px;
+        border-bottom: 2px solid $color-p;
+
+        .logo-name {
+          font-size: 50px;
+          float: left;
+        }
+      }
+
+      .show-menu-li {
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 300;
+        gap: 12px;
         cursor: pointer;
+
+        .active {
+          text-decoration: none;
+        }
+
+        .nav-link-item {
+          &:hover {
+            color: $color-hover;
+          }
+        }
+      }
+    }
+
+    .show-menu-icon-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      font-size: 30px;
+      gap: 35px;
+      margin-top: 70px;
+
+      .show-menu-icon {
+        color: $color-p;
         transition: all 0.3s ease;
 
         &:hover {
           color: $color-hover;
-        }
-      }
-
-      .active {
-        font-weight: 500;
-        color: $color-white;
-        text-decoration: underline;
-        text-underline-offset: 15px;
-        text-decoration-thickness: 3px;
-      }
-    }
-
-    .show-menu-findme {
-      background-color: $color-content-bg-dark;
-      background-color: $color-bg-section;
-
-      width: 60%;
-      position: fixed;
-      bottom: 0px;
-      left: 0px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 10px;
-      gap: 0.5rem;
-
-      h3 {
-        color: $color-p;
-      }
-
-      .show-menu-icon-container {
-        gap: 2rem;
-        font-size: 1.9rem;
-        margin: 0 auto;
-
-        .show-menu-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: $color-p;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: $color-hover;
-            cursor: pointer;
-          }
+          cursor: pointer;
         }
       }
     }
@@ -963,11 +972,11 @@ p {
   padding-right: 4rem;
   background-color: $color-bg-section;
 
-  .show-menu-icon-container {
+  .footer-icon-container {
     gap: 2rem;
     font-size: 1.9rem;
 
-    .show-menu-icon {
+    .footer-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1014,8 +1023,10 @@ p {
     padding-right: 2rem;
   }
 
-  .new-menu {
-    display: block;
+  .mob-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .theme-btn {
@@ -1028,37 +1039,6 @@ p {
   #navbar {
     .nav-links-n {
       display: none;
-    }
-
-    .show-menu-container {
-      width: 50%;
-    }
-
-    .show-menu-icon-container {
-      gap: 1.3rem;
-      font-size: 1.9rem;
-
-      .show-menu-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 13px;
-
-        &:hover {
-          color: $color-hover;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .show-menu-li {
-      gap: 3rem;
-    }
-
-    .show-menu-findme {
-      width: 50%;
-      gap: 0.3rem;
-      font-size: 0.9rem;
     }
   }
 
@@ -1150,8 +1130,8 @@ p {
   #footer {
     flex-direction: column;
     gap: 1rem;
-    .show-menu-icon-container {
-      .show-menu-icon {
+    .footer-icon-container {
+      .footer-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1250,7 +1230,6 @@ p {
   #education,
   #skills,
   #interests {
-    // width: 95%;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
@@ -1274,15 +1253,14 @@ p {
 
   #navbar {
     .show-menu-container {
-      width: 60%;
-    }
+      width: 70%;
 
-    .show-menu-findme {
-      width: 60%;
-      .show-menu-icon-container {
-        gap: 0px;
-        display: flex;
-        flex-wrap: wrap;
+      .show-menu-content {
+        padding: 80px;
+
+        .show-menu-icon-container {
+          gap: 15px;
+        }
       }
     }
   }
@@ -1327,11 +1305,20 @@ p {
 
   #navbar {
     .show-menu-container {
-      width: 70%;
-
       .show-menu-content {
-        .show-menu-findme {
-          width: 70%;
+        padding: 50px;
+
+        .show-menu-logo-link {
+          .show-menu-logo-name {
+            .logo-name {
+              font-size: 45px;
+            }
+          }
+        }
+
+        .show-menu-icon-container {
+          font-size: 28px;
+          gap: 15px;
         }
       }
     }

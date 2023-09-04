@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../style.scss";
 import { Link } from "react-scroll";
-import { LuMenu } from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
@@ -98,90 +97,91 @@ export default function NavBar() {
           </Link>
         </div>
 
-        <span
+        <div
           ref={navbarRef}
           onClick={() => setShowMenu(!showMenu)}
-          className="new-menu"
+          className="mob-menu"
         >
-          <LuMenu />
-        </span>
+          <div
+            className={`${"burger"} ${showMenu ? "burgerActive" : ""}`}
+          ></div>
+        </div>
 
         <div
           className="show-menu-container"
           style={{ display: showMenu ? "block" : "none" }}
         >
           <div className="show-menu-content">
-            <div className="show-menu-logoname">
-              <div className="logo-name">
-                <span>R</span>ushi<span>B</span>utani
+            <div className="show-menu-logo-link">
+              <div className="show-menu-logo-name">
+                <div className="logo-name">
+                  <span>R</span>ushi<span>B</span>utani
+                </div>
+              </div>
+              <div className="show-menu-li font-heading">
+                <Link
+                  activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={200}
+                  className="nav-link-item"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  activeClass="active"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-40}
+                  duration={200}
+                  className="nav-link-item"
+                  onClick={() => setShowMenu(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  activeClass="active"
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-40}
+                  duration={200}
+                  className="nav-link-item"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Projects
+                </Link>
+                <Link
+                  activeClass="active"
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-40}
+                  duration={200}
+                  className="nav-link-item"
+                  onClick={() => setShowMenu(false)}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
-            <div className="show-menu-li font-heading">
-              <Link
-                activeClass="active"
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={200}
-                className="nav-link-item"
-                onClick={() => setShowMenu(false)}
-              >
-                Home
-              </Link>
-              <Link
-                activeClass="active"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-40}
-                duration={200}
-                className="nav-link-item"
-                onClick={() => setShowMenu(false)}
-              >
-                About
-              </Link>
-              <Link
-                activeClass="active"
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-40}
-                duration={200}
-                className="nav-link-item"
-                onClick={() => setShowMenu(false)}
-              >
-                Projects
-              </Link>
-              <Link
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-40}
-                duration={200}
-                className="nav-link-item"
-                onClick={() => setShowMenu(false)}
-              >
-                Contact
-              </Link>
-            </div>
-            <div className="show-menu-findme font-heading">
-              <h3>Find me in</h3>
-              <div className="flex show-menu-icon-container">
-                <span className="show-menu-icon" onClick={handleLinkedInClick}>
-                  <FaLinkedin />
-                </span>
-                <span className="show-menu-icon" onClick={handleInstagramClick}>
-                  <GrInstagram />
-                </span>
-                <span className="show-menu-icon" onClick={handleFacebookClick}>
-                  <BsFacebook />
-                </span>
-                <span className="show-menu-icon" onClick={handleTwitterClick}>
-                  <BsTwitter />
-                </span>
-              </div>
+            <div className="flex show-menu-icon-container">
+              <span className="show-menu-icon" onClick={handleLinkedInClick}>
+                <FaLinkedin />
+              </span>
+              <span className="show-menu-icon" onClick={handleInstagramClick}>
+                <GrInstagram />
+              </span>
+              <span className="show-menu-icon" onClick={handleFacebookClick}>
+                <BsFacebook />
+              </span>
+              <span className="show-menu-icon" onClick={handleTwitterClick}>
+                <BsTwitter />
+              </span>
             </div>
           </div>
         </div>
