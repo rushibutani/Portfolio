@@ -50,7 +50,7 @@ const Projects = () => {
 
             <p>
               My Portfolio for introducing myself digitally. It is built using
-              HTML, CSS, SASS, JavaScript and React.
+              HTML, CSS, SASS, JavaScript and ReactJs.
             </p>
 
             <button
