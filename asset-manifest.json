@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0285efae.css",
+    "main.css": "/portfolio/static/css/main.e926f4e5.css",
     "main.js": "/portfolio/static/js/main.5c14a323.js",
     "static/media/vete-logo.png": "/portfolio/static/media/vete-logo.621d9bbbd9eeb76f040d.png",
     "static/media/tesla-logo.png": "/portfolio/static/media/tesla-logo.ba18cbe776ad8b73513b.png",
@@ -10,11 +10,11 @@
     "static/media/edusite-logo.jpg": "/portfolio/static/media/edusite-logo.085399627cc06dc29ec3.jpg",
     "static/media/mi-logo.jpg": "/portfolio/static/media/mi-logo.bd78491ac6ab496a629c.jpg",
     "index.html": "/portfolio/index.html",
-    "main.0285efae.css.map": "/portfolio/static/css/main.0285efae.css.map",
+    "main.e926f4e5.css.map": "/portfolio/static/css/main.e926f4e5.css.map",
     "main.5c14a323.js.map": "/portfolio/static/js/main.5c14a323.js.map"
   },
   "entrypoints": [
-    "static/css/main.0285efae.css",
+    "static/css/main.e926f4e5.css",
     "static/js/main.5c14a323.js"
   ]
 }
