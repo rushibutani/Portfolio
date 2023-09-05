@@ -33,6 +33,13 @@ $color-project-border: var(--color-project-border);
 }
 
 //---------------------Common CSS-------------------//
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -46,10 +53,6 @@ body {
   color: $color-white;
   overflow: hidden;
   overflow-y: scroll;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 h1 {
@@ -125,16 +128,28 @@ p {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: $color-p;
+  z-index: 99;
+  opacity: 0;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
-  font-size: 2.2rem;
-  z-index: 99;
-  opacity: 0;
+  padding: 7px;
+  background-color: $color-p;
+  border-radius: 3px;
   animation-duration: 0.6s;
   animation-name: scrollToTop;
 
+  svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 22px;
+    width: 22px;
+    fill: $color-black;
+    vertical-align: middle;
+    overflow: hidden;
+  }
   @keyframes scrollToTop {
     0% {
       transform: translateX(100%);
@@ -146,16 +161,16 @@ p {
       opacity: 1;
     }
   }
-}
 
-.scroll-to-top-button.visible {
-  display: block;
-  opacity: 1;
-}
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
 
-.scroll-to-top-button:hover {
-  opacity: 1;
-  transform: translateY(-3px);
+  &:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
 }
 
 // //----------- Light Dark Theme
@@ -177,6 +192,8 @@ p {
   align-items: center;
   justify-content: center;
   z-index: 99;
+  transition: all 0.5s ease-in-out;
+  opacity: 0.7;
 
   .theme-btn-icon {
     color: $color-black;
@@ -219,7 +236,7 @@ p {
     .nav-link-item {
       margin-left: 2.3rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
 
       &:hover {
         color: $color-hover;
@@ -343,6 +360,7 @@ p {
         }
 
         .nav-link-item {
+          transition: all 0.3s ease;
           &:hover {
             color: $color-hover;
           }
@@ -1247,6 +1265,23 @@ p {
   .project-card-container {
     .project-card {
       width: 90%;
+    }
+  }
+
+  .scroll-to-top-button {
+    @keyframes scrollToTop {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 0.5;
+      }
+    }
+    &.visible {
+      opacity: 0.5;
     }
   }
 }
