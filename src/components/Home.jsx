@@ -43,7 +43,7 @@ export default function Home() {
             Hello, i'm <span className="myname">Rushi Butani</span>
           </h1>
 
-          <p className="section-text-p2">
+          <p className="typewriter-text">
             a <span>{text}</span>
             <Cursor
               cursorBlinking="false"

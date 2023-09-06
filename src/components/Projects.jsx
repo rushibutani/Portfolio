@@ -40,7 +40,7 @@ const Projects = () => {
       <p className="section-text-p1">Browse My Recent</p>
       <h1 className="title mb-40 font-heading">My Projects</h1>
 
-      <div className="w-full project-card-container flex">
+      <div className="w-full project-card-container">
         <div className="project-card">
           <div className="project-img">
             <img src={projectimg1} alt="src" />

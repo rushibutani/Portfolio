@@ -119,7 +119,7 @@ export default function Contact() {
 
             <div className="contact-social-container">
               <div className="contact-social-content link-mail">
-                <MdMail className="icon" onClick={mailToButton} />
+                <MdMail className="contact-icon" onClick={mailToButton} />
                 <p>
                   <Link
                     to="mailto:rushibutani@gmail.com"
@@ -131,9 +131,9 @@ export default function Contact() {
                   </Link>
                 </p>
               </div>
-              <div className="contact-social-content link-linkedin">
+              <div className="contact-social-content link-phonenumber">
                 <BiSolidPhone
-                  className="icon"
+                  className="contact-icon"
                   onClick={handlecontactNumberClick}
                 />
                 <p>

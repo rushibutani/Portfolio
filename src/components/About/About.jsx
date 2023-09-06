@@ -21,7 +21,7 @@ export default function About() {
         </p>
 
         <div className="w-full mb-40">
-          <ul className="flex items-center font-heading">
+          <ul className="font-heading">
             <li
               onClick={() =>
                 setEducationData(true) &

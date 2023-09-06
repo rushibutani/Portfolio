@@ -108,17 +108,17 @@ export default function NavBar() {
         </div>
 
         <div
-          className="show-menu-container"
+          className="mob-menu-container"
           style={{ display: showMenu ? "block" : "none" }}
         >
-          <div className="show-menu-content">
-            <div className="show-menu-logo-link">
-              <div className="show-menu-logo-name">
+          <div className="mob-menu-content">
+            <div className="mob-menu-logo-link">
+              <div className="mob-menu-logo-name">
                 <div className="logo-name">
                   <span>R</span>ushi<span>B</span>utani
                 </div>
               </div>
-              <div className="show-menu-li font-heading">
+              <div className="mob-menu-li font-heading">
                 <Link
                   activeClass="active"
                   to="home"
@@ -169,17 +169,17 @@ export default function NavBar() {
                 </Link>
               </div>
             </div>
-            <div className="flex show-menu-icon-container">
-              <span className="show-menu-icon" onClick={handleLinkedInClick}>
+            <div className="flex mob-menu-icon-container">
+              <span className="mob-menu-icon" onClick={handleLinkedInClick}>
                 <FaLinkedin />
               </span>
-              <span className="show-menu-icon" onClick={handleInstagramClick}>
+              <span className="mob-menu-icon" onClick={handleInstagramClick}>
                 <GrInstagram />
               </span>
-              <span className="show-menu-icon" onClick={handleFacebookClick}>
+              <span className="mob-menu-icon" onClick={handleFacebookClick}>
                 <BsFacebook />
               </span>
-              <span className="show-menu-icon" onClick={handleTwitterClick}>
+              <span className="mob-menu-icon" onClick={handleTwitterClick}>
                 <BsTwitter />
               </span>
             </div>

@@ -29,6 +29,17 @@ $color-project-border: var(--color-project-border);
 @mixin flex {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+@mixin all-sec-common {
+  min-height: 90vh;
+  height: fit-content;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  padding-left: 3rem;
+  padding-right: 3rem;
   margin: 0 auto;
 }
 
@@ -101,11 +112,6 @@ p {
   color: $color-hover;
 }
 
-.section-text-p2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-
 .title {
   font-size: 3rem;
   text-align: center;
@@ -140,9 +146,7 @@ p {
   animation-name: scrollToTop;
 
   svg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
     position: relative;
     height: 22px;
     width: 22px;
@@ -176,6 +180,7 @@ p {
 // //----------- Light Dark Theme
 
 .theme-btn {
+  @include flex;
   position: fixed;
   width: 40px;
   border-radius: 30px 0 0 30px;
@@ -187,10 +192,7 @@ p {
   border: none;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.3rem;
   z-index: 99;
   transition: all 0.5s ease-in-out;
   opacity: 0.7;
@@ -203,16 +205,19 @@ p {
 //-------------------------- NavBar Section ------------------------//
 
 #navbar {
-  padding: 1rem 3.5rem;
-  height: 5rem;
-  position: sticky;
-  top: 0px;
-  z-index: 10;
-  background-color: $color-black;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px 50px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: $color-black;
+  margin: 0 auto;
   border-bottom: 1px solid $color-project-border;
 
   .logo-name {
@@ -227,14 +232,12 @@ p {
   }
 
   .nav-links-n {
+    @include flex;
     font-size: 1.25rem;
     color: $color-p;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 2.5rem;
 
     .nav-link-item {
-      margin-left: 2.3rem;
       cursor: pointer;
       transition: all 0.3s ease;
 
@@ -299,7 +302,7 @@ p {
   }
 }
 
-.show-menu-container {
+.mob-menu-container {
   height: 100%;
   background-color: $color-content-bg-dark;
   position: fixed;
@@ -320,7 +323,7 @@ p {
     }
   }
 
-  .show-menu-content {
+  .mob-menu-content {
     box-sizing: border-box;
     height: 100%;
     padding: 100px;
@@ -328,13 +331,13 @@ p {
     flex-direction: column;
     justify-content: space-between;
 
-    .show-menu-logo-link {
+    .mob-menu-logo-link {
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-top: 20px;
 
-      .show-menu-logo-name {
+      .mob-menu-logo-name {
         color: $color-p;
         margin-bottom: 40px;
         border-bottom: 2px solid $color-p;
@@ -345,7 +348,7 @@ p {
         }
       }
 
-      .show-menu-li {
+      .mob-menu-li {
         font-size: 30px;
         display: flex;
         flex-direction: column;
@@ -353,7 +356,6 @@ p {
         color: $color-white;
         font-weight: 300;
         gap: 12px;
-        cursor: pointer;
 
         .active {
           text-decoration: none;
@@ -361,6 +363,8 @@ p {
 
         .nav-link-item {
           transition: all 0.3s ease;
+          cursor: pointer;
+          width: fit-content;
           &:hover {
             color: $color-hover;
           }
@@ -368,15 +372,15 @@ p {
       }
     }
 
-    .show-menu-icon-container {
+    .mob-menu-icon-container {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      font-size: 30px;
-      gap: 35px;
+      font-size: 1.8rem;
+      gap: 2rem;
       margin-top: 70px;
 
-      .show-menu-icon {
+      .mob-menu-icon {
         color: $color-p;
         transition: all 0.3s ease;
 
@@ -393,23 +397,14 @@ p {
 
 #home {
   @include flex;
+  @include all-sec-common;
   background-color: $color-bg-section;
-  align-items: center;
-  min-height: 90vh;
-  height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  overflow: hidden;
-  padding-left: 3rem;
-  padding-right: 3rem;
 
   .home-img-section {
-    display: flex;
-    align-items: center;
+    @include flex;
     max-width: 50%;
     height: auto;
     overflow: hidden;
-    justify-content: center;
 
     img {
       padding-right: 15px;
@@ -422,9 +417,8 @@ p {
   }
 
   .home-text-section {
-    display: flex;
+    @include flex;
     flex-direction: column;
-    align-items: center;
     width: 50%;
     text-align: center;
 
@@ -436,18 +430,18 @@ p {
       .home-btn-one {
         background: none;
         color: $color-white;
-        border: $color-hover 2px solid;
+        border: 2px solid $color-hover;
         cursor: pointer;
 
         &:hover {
-          border: $color-hover 2px solid;
+          border: 2px solid $color-hover;
           background: $color-hover;
           color: $color-white;
         }
       }
 
       .home-btn-two {
-        border: $color-hover 2px solid;
+        border: 2px solid $color-hover;
         cursor: pointer;
         background: $color-hover;
         color: $color-white;
@@ -459,9 +453,7 @@ p {
     }
 
     .home-social-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex;
       margin-top: 1rem;
       gap: 1rem;
 
@@ -487,48 +479,43 @@ p {
   }
 }
 
+.typewriter-text {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
 .btn {
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 1rem;
   width: 8rem;
-  border-radius: 0.7rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
 }
 
 //-------------------------- About Section ----------------------------//
 
 #about {
   @include flex;
+  @include all-sec-common;
   flex-direction: column;
-  align-items: center;
-  min-height: 90vh;
-  height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  overflow: hidden;
-  padding-left: 3rem;
-  padding-right: 3rem;
 
   ul {
+    @include flex;
     width: 100%;
     margin: 0 auto;
-    justify-content: center;
   }
   li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
   }
 }
 
 .about-me-text {
+  @include flex;
   font-size: 1.1rem;
   width: 60%;
   margin-bottom: 40px;
-  display: flex;
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
 .mb-40 {
@@ -543,12 +530,10 @@ p {
 }
 
 .about-list-before {
+  @include flex;
   background-color: $color-hover;
-  display: flex;
-  justify-content: center;
   cursor: pointer;
   border: 2px solid $color-hover;
-  align-items: center;
   transition: all 0.3s ease;
   text-align: center;
   font-size: 1.2rem;
@@ -557,13 +542,10 @@ p {
 }
 
 .about-list {
+  @include flex;
   background-color: $color-black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   border: 2px solid $color-hover;
-
   transition: all 0.3s ease;
   text-align: center;
   font-size: 1.2rem;
@@ -583,9 +565,11 @@ p {
 }
 
 #education {
-  @include flex;
-  width: 100%;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
   gap: 2rem;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -602,10 +586,10 @@ p {
   padding: 1.5rem;
   background: $color-black;
   background-color: $color-content-bg-dark;
-  border-radius: 0.7rem;
-  border: $color-project-border 2px solid;
+  border-radius: 10px;
+  border: 2px solid $color-project-border;
   text-align: left;
-  min-height: 160px;
+  min-height: 10rem;
   color: $about-content-color;
 
   &:hover {
@@ -620,7 +604,9 @@ p {
 }
 
 #skills {
-  @include flex;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   width: 100%;
   gap: 2rem;
@@ -637,18 +623,15 @@ p {
 }
 
 .skills-card-content {
+  @include flex;
   width: 100%;
-  display: flex;
   flex-direction: column;
-  border-radius: 1rem;
-  align-items: center;
+  border-radius: 10px;
   text-align: center;
-  justify-content: center;
   height: 11rem;
   width: 12rem;
-  transition: 1s ease;
   background-color: $color-content-bg-dark;
-  border: $color-project-border 2px solid;
+  border: 2px solid $color-project-border;
   color: $about-content-color;
 
   .skills-icon {
@@ -658,8 +641,7 @@ p {
 
   &:hover .skills-icon {
     font-size: 7rem;
-    display: flex;
-    align-items: center;
+    @include flex;
   }
 
   &:hover h4 {
@@ -668,41 +650,43 @@ p {
 }
 
 .skills-icon-html:hover {
-  border: rgba(244, 122, 51, 0.486) 0.1rem solid;
+  border: rgba(244, 122, 51, 0.486) 2px solid;
   background-color: rgba(244, 122, 51, 0.612);
 }
 
 .skills-icon-css:hover {
-  border: rgba(33, 75, 229, 0.489) 0.1rem solid;
+  border: rgba(33, 75, 229, 0.489) 2px solid;
   background-color: rgba(33, 75, 229, 0.61);
 }
 
 .skills-icon-js:hover {
-  border: rgba(240, 218, 79, 0.485) 0.1rem solid;
+  border: rgba(240, 218, 79, 0.485) 2px solid;
   background-color: rgba(240, 218, 79, 0.612);
 }
 
 .skills-icon-boot:hover {
-  border: rgba(111, 16, 244, 0.488) 0.1rem solid;
+  border: rgba(111, 16, 244, 0.488) 2px solid;
   background-color: rgba(111, 16, 244, 0.614);
 }
 
 .skills-icon-sass:hover {
-  border: rgba(207, 100, 154, 0.488) 0.1rem solid;
+  border: rgba(207, 100, 154, 0.488) 2px solid;
   background-color: rgba(207, 100, 154, 0.611);
 }
 
 .skills-icon-react:hover {
-  border: rgba(20, 156, 202, 0.489) 0.1rem solid;
+  border: rgba(20, 156, 202, 0.489) 2px solid;
   background-color: rgba(20, 156, 202, 0.603);
 }
 .skills-icon-jq:hover {
-  border: rgba(7, 104, 173, 0.484) 0.1rem solid;
+  border: rgba(7, 104, 173, 0.484) 2px solid;
   background-color: rgba(7, 104, 173, 0.611);
 }
 
 #interests {
-  @include flex;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   flex-direction: column;
   width: 100%;
   gap: 2rem;
@@ -714,19 +698,12 @@ p {
 
 #projects {
   @include flex;
+  @include all-sec-common;
   background-color: $color-bg-section;
   flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
 
   .project-card-container {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include flex;
     gap: 3rem;
     flex-wrap: wrap;
 
@@ -746,7 +723,7 @@ p {
       .project-title {
         font-weight: 600;
         color: $color-hover;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -754,37 +731,35 @@ p {
 
 .project-btn {
   @include flex;
-  align-items: center;
+  margin: 0 auto;
   overflow: hidden;
   font-weight: 600;
   font-size: 0.85rem;
-  border-radius: 0.4rem;
+  border-radius: 7px;
   transition: all 0.3s ease;
   padding: 0.6rem 5rem;
   margin-top: 1rem;
   color: $color-white;
-  border: $color-project-border 2px solid;
+  border: 2px solid $color-project-border;
   cursor: pointer;
   background-color: $color-content-bg-dark;
 }
 
 .project-card {
+  @include flex;
   width: 30%;
-  display: flex;
   flex-wrap: wrap;
   min-height: 30rem;
   flex-direction: column;
   padding: 32px 38px;
   height: fit-content;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   background-color: $color-black;
-  text-align: center;
   border: $color-project-border 2px solid;
   transition: 0.3s ease;
   background-color: $color-content-bg-dark;
 
   &:hover {
-    // background-image: linear-gradient($color-content-bg-dark, $color-white);
     background-image: linear-gradient(
       to top,
       $color-content-bg-light 0%,
@@ -804,16 +779,11 @@ p {
   }
 }
 
-.project-icon {
-  display: flex;
-  gap: 0.5rem;
-}
-
 .project-img {
   width: 100%;
   height: 12rem;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 8px;
 
   img {
     width: 100%;
@@ -828,31 +798,20 @@ p {
 //--------------------------- Contact Section ----------------------//
 #contact {
   @include flex;
+  @include all-sec-common;
   flex-direction: column;
-  align-items: center;
-  min-height: 90vh;
-  height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  overflow: hidden;
-  padding-left: 3rem;
-  padding-right: 3rem;
 
   .contact-main-section {
+    @include flex;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 3rem;
   }
 
   .contact-social-container {
+    @include flex;
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: 10px;
     border: 2px solid $color-content-bg-light;
     background: $color-content-bg-dark;
     padding: 1rem;
@@ -861,12 +820,9 @@ p {
     flex-wrap: wrap;
 
     .contact-social-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex;
       text-align: center;
       gap: 0.5rem;
-      transition: all 0.3s ease;
 
       p {
         font-size: larger;
@@ -876,7 +832,7 @@ p {
 }
 
 .link-mail:hover {
-  &:hover .icon {
+  &:hover .contact-icon {
     color: $color-hover;
   }
   &:hover .link-a {
@@ -884,8 +840,8 @@ p {
   }
 }
 
-.link-linkedin:hover {
-  &:hover .icon {
+.link-phonenumber:hover {
+  &:hover .contact-icon {
     color: $color-hover;
   }
 
@@ -900,10 +856,17 @@ p {
   text-decoration: none;
   text-decoration-color: $color-black;
   font-size: 1.3rem;
+  transition: all 0.3s ease;
 }
 
 .link-a-phone {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.contact-icon {
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
 }
 
 #form {
@@ -926,11 +889,11 @@ p {
 
 .input {
   background-color: $color-content-bg-light;
-  border-radius: 0.3rem;
+  border-radius: 5px;
   height: 2.8rem;
   border: none;
   color: $color-white;
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -944,36 +907,44 @@ p {
   }
 }
 
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  // outline: none;
+  resize: vertical;
+}
+
+.resize-none {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: auto;
+}
+
 .form-p {
   letter-spacing: 0.025em;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   padding-bottom: 0.2rem;
 }
 
 .form-btn {
   font-weight: 600;
   font-size: 0.85rem;
-  transition: all 300ms ease;
+  transition: all 0.3s ease;
   padding: 1rem;
   width: 8rem;
-  border-radius: 0.7rem;
+  border-radius: 10px;
   background: none;
   color: $color-white;
-  border: $color-project-border 2px solid;
-
+  border: 2px solid $color-project-border;
   cursor: pointer;
 
   &:hover {
-    border: $color-hover 2px solid;
+    border: 2px solid $color-hover;
     background: $color-hover;
     color: $color-white;
   }
-}
-
-.resize-none {
-  resize: none;
-  width: 100%;
-  height: auto;
 }
 
 .err-msg {
@@ -1024,15 +995,13 @@ p {
     font-size: 1.9rem;
 
     .footer-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex;
       color: $color-p;
       transition: all 0.3s ease;
+      cursor: pointer;
 
       &:hover {
         color: $color-hover;
-        cursor: pointer;
         transform: translateY(-3px);
       }
     }
@@ -1071,9 +1040,7 @@ p {
   }
 
   .mob-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
   }
 
   .theme-btn {
@@ -1090,9 +1057,8 @@ p {
   }
 
   #home {
-    display: flex;
+    @include flex;
     flex-direction: column;
-    align-items: center;
     margin: 0 auto;
     height: fit-content;
     gap: 1.5rem;
@@ -1175,20 +1141,9 @@ p {
   }
 
   #footer {
+    @include flex;
     flex-direction: column;
     gap: 1rem;
-    .footer-icon-container {
-      .footer-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-          color: $color-hover;
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
 
@@ -1302,7 +1257,7 @@ p {
     gap: 1rem;
 
     .home-text-section {
-      .section-text-p2 {
+      .typewriter-text {
         font-size: 1.4rem;
       }
       h1 {
@@ -1316,13 +1271,13 @@ p {
   }
 
   #navbar {
-    .show-menu-container {
+    .mob-menu-container {
       width: 70%;
 
-      .show-menu-content {
+      .mob-menu-content {
         padding: 80px;
 
-        .show-menu-icon-container {
+        .mob-menu-icon-container {
           gap: 15px;
         }
       }
@@ -1368,19 +1323,19 @@ p {
   }
 
   #navbar {
-    .show-menu-container {
-      .show-menu-content {
+    .mob-menu-container {
+      .mob-menu-content {
         padding: 50px;
 
-        .show-menu-logo-link {
-          .show-menu-logo-name {
+        .mob-menu-logo-link {
+          .mob-menu-logo-name {
             .logo-name {
               font-size: 45px;
             }
           }
         }
 
-        .show-menu-icon-container {
+        .mob-menu-icon-container {
           font-size: 28px;
           gap: 15px;
         }
