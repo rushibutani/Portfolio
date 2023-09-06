@@ -1082,7 +1082,7 @@ textarea {
 
       img {
         margin: 0 auto;
-        max-width: 55%;
+        width: 55%;
       }
     }
   }
@@ -1167,7 +1167,7 @@ textarea {
   #home {
     .home-img-section {
       img {
-        max-width: 75%;
+        width: 65%;
       }
     }
   }
@@ -1272,6 +1272,12 @@ textarea {
         }
       }
     }
+
+    .home-img-section {
+      img {
+        width: 75%;
+      }
+    }
   }
 
   #navbar {
@@ -1350,7 +1356,7 @@ textarea {
   #home {
     .home-img-section {
       img {
-        max-width: 85%;
+        width: 90%;
       }
     }
 
