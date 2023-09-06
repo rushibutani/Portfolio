@@ -64,6 +64,7 @@ body {
   color: $color-white;
   overflow: hidden;
   overflow-y: scroll;
+  box-sizing: border-box;
   font-family: Buffalo, "Open Sans", "Lato" sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
