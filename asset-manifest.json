@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a7306d87.css",
-    "main.js": "/portfolio/static/js/main.0f81a218.js",
+    "main.css": "/portfolio/static/css/main.bb8f828b.css",
+    "main.js": "/portfolio/static/js/main.70a921cc.js",
     "static/media/vete-logo.png": "/portfolio/static/media/vete-logo.621d9bbbd9eeb76f040d.png",
     "static/media/tesla-logo.png": "/portfolio/static/media/tesla-logo.ba18cbe776ad8b73513b.png",
     "static/media/my-img-profile.png": "/portfolio/static/media/my-img-profile.2488639d799b47d9dba1.png",
@@ -10,11 +10,11 @@
     "static/media/edusite-logo.jpg": "/portfolio/static/media/edusite-logo.085399627cc06dc29ec3.jpg",
     "static/media/mi-logo.jpg": "/portfolio/static/media/mi-logo.bd78491ac6ab496a629c.jpg",
     "index.html": "/portfolio/index.html",
-    "main.a7306d87.css.map": "/portfolio/static/css/main.a7306d87.css.map",
-    "main.0f81a218.js.map": "/portfolio/static/js/main.0f81a218.js.map"
+    "main.bb8f828b.css.map": "/portfolio/static/css/main.bb8f828b.css.map",
+    "main.70a921cc.js.map": "/portfolio/static/js/main.70a921cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7306d87.css",
-    "static/js/main.0f81a218.js"
+    "static/css/main.bb8f828b.css",
+    "static/js/main.70a921cc.js"
   ]
 }
