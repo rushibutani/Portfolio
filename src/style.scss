@@ -64,6 +64,9 @@ body {
   color: $color-white;
   overflow: hidden;
   overflow-y: scroll;
+  font-family: Buffalo, "Open Sans", "Lato" sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -402,7 +405,7 @@ p {
 
   .home-img-section {
     @include flex;
-    max-width: 50%;
+    width: 50%;
     height: auto;
     overflow: hidden;
 
@@ -413,6 +416,7 @@ p {
       width: 100%;
       overflow: hidden;
       object-fit: cover;
+      vertical-align: middle;
     }
   }
 
@@ -1072,13 +1076,13 @@ textarea {
     }
 
     .home-img-section {
-      max-width: 100%;
+      width: 100%;
       justify-content: center;
       align-items: center;
 
       img {
         margin: 0 auto;
-        max-width: 50%;
+        max-width: 55%;
       }
     }
   }
@@ -1163,7 +1167,7 @@ textarea {
   #home {
     .home-img-section {
       img {
-        max-width: 80%;
+        max-width: 75%;
       }
     }
   }

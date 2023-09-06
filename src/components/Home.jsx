@@ -2,6 +2,7 @@ import React from "react";
 import myImg1 from "../assets/img/my-img-profile.png";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [text] = useTypewriter({
@@ -33,9 +34,15 @@ export default function Home() {
   return (
     <>
       <section id="home">
-        <div className="home-img-section">
-          <img src={myImg1} alt="Rushi Profile" />
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="home-img-section"
+        >
+          <img src={myImg1} alt="Rushi Profile" loading="lazy" />
+        </motion.div>
+
         <div className="home-text-section">
           <p>Welcome To My World</p>
 
