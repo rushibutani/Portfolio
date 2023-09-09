@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.b7f6af22.css",
-    "main.js": "/portfolio/static/js/main.72aa7f11.js",
-    "static/media/vete-logo.png": "/portfolio/static/media/vete-logo.621d9bbbd9eeb76f040d.png",
-    "static/media/tesla-logo.png": "/portfolio/static/media/tesla-logo.ba18cbe776ad8b73513b.png",
-    "static/media/my-img-profile.png": "/portfolio/static/media/my-img-profile.2488639d799b47d9dba1.png",
-    "static/media/RbImg2b.jpg": "/portfolio/static/media/RbImg2b.63556d72186803020230.jpg",
+    "main.js": "/portfolio/static/js/main.1e74e623.js",
+    "static/media/tesla-logo.webp": "/portfolio/static/media/tesla-logo.be884ce19ed91fcf23cb.webp",
+    "static/media/vete-logo.webp": "/portfolio/static/media/vete-logo.57a92a894bf431ff0565.webp",
+    "static/media/RbImg2b.webp": "/portfolio/static/media/RbImg2b.ffc3d42357a159fe71a9.webp",
+    "static/media/my-img-profile.webp": "/portfolio/static/media/my-img-profile.ee43f5a311d5ba1163e7.webp",
     "static/media/Buffalo.otf": "/portfolio/static/media/Buffalo.02568d6513deec8e6404.otf",
-    "static/media/edusite-logo.jpg": "/portfolio/static/media/edusite-logo.085399627cc06dc29ec3.jpg",
-    "static/media/mi-logo.jpg": "/portfolio/static/media/mi-logo.bd78491ac6ab496a629c.jpg",
+    "static/media/edusite-logo.webp": "/portfolio/static/media/edusite-logo.f64456458db9a8942f5d.webp",
+    "static/media/mi-logo.webp": "/portfolio/static/media/mi-logo.8acef469ddaf31076861.webp",
+    "static/media/RushiLogo.webp": "/portfolio/static/media/RushiLogo.f73c36df9f68a8ab14e5.webp",
     "index.html": "/portfolio/index.html",
     "main.b7f6af22.css.map": "/portfolio/static/css/main.b7f6af22.css.map",
-    "main.72aa7f11.js.map": "/portfolio/static/js/main.72aa7f11.js.map"
+    "main.1e74e623.js.map": "/portfolio/static/js/main.1e74e623.js.map"
   },
   "entrypoints": [
     "static/css/main.b7f6af22.css",
-    "static/js/main.72aa7f11.js"
+    "static/js/main.1e74e623.js"
   ]
 }
