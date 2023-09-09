@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import myImg2 from "../assets/img/RbImg2b.jpg";
+import myImg2 from "../assets/img/RbImg2b.webp";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-scroll";
 import { FaLinkedin } from "react-icons/fa6";

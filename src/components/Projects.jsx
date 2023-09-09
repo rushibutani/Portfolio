@@ -1,9 +1,9 @@
 import React from "react";
-import projectimg1 from "../assets/img/RushiLogo.png";
-import projectimg2 from "../assets/img/edusite-logo.jpg";
-import projectimg3 from "../assets/img/mi-logo.jpg";
-import projectimg4 from "../assets/img/vete-logo.png";
-import projectimg5 from "../assets/img/tesla-logo.png";
+import projectimg1 from "../assets/img/RushiLogo.webp";
+import projectimg2 from "../assets/img/edusite-logo.webp";
+import projectimg3 from "../assets/img/mi-logo.webp";
+import projectimg4 from "../assets/img/vete-logo.webp";
+import projectimg5 from "../assets/img/tesla-logo.webp";
 
 const Projects = () => {
   const githubIconButton1 = () => {

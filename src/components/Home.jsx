@@ -1,5 +1,5 @@
 import React from "react";
-import myImg1 from "../assets/img/my-img-profile.png";
+import myImg1 from "../assets/img/my-img-profile.webp";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { motion } from "framer-motion";
