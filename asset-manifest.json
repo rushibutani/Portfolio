@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b7f6af22.css",
+    "main.css": "/portfolio/static/css/main.517d62d4.css",
     "main.js": "/portfolio/static/js/main.1e74e623.js",
     "static/media/tesla-logo.webp": "/portfolio/static/media/tesla-logo.be884ce19ed91fcf23cb.webp",
     "static/media/vete-logo.webp": "/portfolio/static/media/vete-logo.57a92a894bf431ff0565.webp",
@@ -11,11 +11,11 @@
     "static/media/mi-logo.webp": "/portfolio/static/media/mi-logo.8acef469ddaf31076861.webp",
     "static/media/RushiLogo.webp": "/portfolio/static/media/RushiLogo.f73c36df9f68a8ab14e5.webp",
     "index.html": "/portfolio/index.html",
-    "main.b7f6af22.css.map": "/portfolio/static/css/main.b7f6af22.css.map",
+    "main.517d62d4.css.map": "/portfolio/static/css/main.517d62d4.css.map",
     "main.1e74e623.js.map": "/portfolio/static/js/main.1e74e623.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7f6af22.css",
+    "static/css/main.517d62d4.css",
     "static/js/main.1e74e623.js"
   ]
 }
