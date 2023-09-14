@@ -65,7 +65,6 @@ body {
   overflow: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
-  font-family: Buffalo, "Open Sans", "Lato" sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -914,10 +913,8 @@ p {
 
 textarea {
   font-size: inherit;
-  font-family: inherit;
   margin: 0;
   padding: 0;
-  // outline: none;
   resize: vertical;
 }
 
