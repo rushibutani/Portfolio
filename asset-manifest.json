@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.15a4f0b8.css",
-    "main.js": "/portfolio/static/js/main.1e74e623.js",
+    "main.css": "/portfolio/static/css/main.ef0fbb51.css",
+    "main.js": "/portfolio/static/js/main.58a8153f.js",
     "static/media/tesla-logo.webp": "/portfolio/static/media/tesla-logo.be884ce19ed91fcf23cb.webp",
     "static/media/vete-logo.webp": "/portfolio/static/media/vete-logo.57a92a894bf431ff0565.webp",
+    "static/media/bgimg.webp": "/portfolio/static/media/bgimg.03f17ab21d80572df14b.webp",
     "static/media/RbImg2b.webp": "/portfolio/static/media/RbImg2b.ffc3d42357a159fe71a9.webp",
     "static/media/my-img-profile.webp": "/portfolio/static/media/my-img-profile.ee43f5a311d5ba1163e7.webp",
     "static/media/Buffalo.otf": "/portfolio/static/media/Buffalo.02568d6513deec8e6404.otf",
@@ -11,11 +12,11 @@
     "static/media/mi-logo.webp": "/portfolio/static/media/mi-logo.8acef469ddaf31076861.webp",
     "static/media/RushiLogo.webp": "/portfolio/static/media/RushiLogo.f73c36df9f68a8ab14e5.webp",
     "index.html": "/portfolio/index.html",
-    "main.15a4f0b8.css.map": "/portfolio/static/css/main.15a4f0b8.css.map",
-    "main.1e74e623.js.map": "/portfolio/static/js/main.1e74e623.js.map"
+    "main.ef0fbb51.css.map": "/portfolio/static/css/main.ef0fbb51.css.map",
+    "main.58a8153f.js.map": "/portfolio/static/js/main.58a8153f.js.map"
   },
   "entrypoints": [
-    "static/css/main.15a4f0b8.css",
-    "static/js/main.1e74e623.js"
+    "static/css/main.ef0fbb51.css",
+    "static/js/main.58a8153f.js"
   ]
 }
