@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap");
 @font-face {
   font-family: Buffalo;
   src: url(../src/assets/fonts/Buffalo.otf);
@@ -14,6 +14,8 @@
   --color-content-bg-light: rgb(39, 39, 39);
   --color-bg-section: rgb(19, 19, 19);
   --color-project-border: rgb(51, 51, 51);
+  --color-home-bg-dark: rgba(10, 10, 10, 0.9);
+  --color-home-bg-light: rgba(5, 5, 5, 0.9);
 }
 
 $about-content-color: var(--about-content-color);
@@ -25,6 +27,8 @@ $color-p: var(--color-p);
 $color-content-bg-dark: var(--color-content-bg-dark);
 $color-content-bg-light: var(--color-content-bg-light);
 $color-project-border: var(--color-project-border);
+$color-home-bg-dark: var(--color-home-bg-dark);
+$color-home-bg-light: var(--color-home-bg-light);
 
 @mixin flex {
   display: flex;
@@ -35,8 +39,8 @@ $color-project-border: var(--color-project-border);
 @mixin all-sec-common {
   min-height: 90vh;
   height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   overflow: hidden;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -68,25 +72,35 @@ body {
   font-family: "Lato", sans-serif, Buffalo, "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1.25;
 }
 
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
 }
 
 p {
   color: $color-p;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.1rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.3rem;
   font-weight: 400;
 }
 
 .font-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+}
+
+.font-title {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
 }
 
 .font-content {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 400;
 }
 
 .flex {
@@ -109,16 +123,24 @@ p {
   justify-content: center;
 }
 
+.col-50 {
+  width: 50%;
+}
+
 /*-- All SECTION --*/
 
 .section-text-p1 {
   text-align: center;
   color: $color-hover;
+  font-size: 1.2rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
+  letter-spacing: 2px;
 }
 
 /* ICONS */
@@ -166,18 +188,18 @@ p {
 
     100% {
       transform: translateX(0);
-      opacity: 1;
+      opacity: 0.6;
     }
   }
 
   &.visible {
     display: block;
-    opacity: 1;
+    opacity: 0.6;
   }
 
   &:hover {
-    opacity: 1;
     transform: translateY(-3px);
+    opacity: 1;
   }
 }
 
@@ -196,13 +218,17 @@ p {
   border: none;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   z-index: 99;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0.7;
 
   .theme-btn-icon {
     color: $color-black;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -212,7 +238,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 50px;
+  padding: 16px 120px;
   height: 80px;
   position: sticky;
   top: 0;
@@ -222,7 +248,6 @@ p {
   z-index: 10;
   background-color: $color-black;
   margin: 0 auto;
-  border-bottom: 1px solid $color-project-border;
 
   .logo-name {
     font-family: Buffalo;
@@ -230,18 +255,17 @@ p {
     font-size: 2.6rem;
     text-align: center;
     color: $color-p;
-    // span {
-    //   // color: $color-hover;
-    // }
   }
 
   .nav-links-n {
     @include flex;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: $color-p;
-    gap: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
     .nav-link-item {
+      margin-left: 2rem;
       cursor: pointer;
       transition: all 0.3s ease;
 
@@ -256,8 +280,8 @@ p {
   font-weight: 600;
   color: $color-white;
   text-decoration: underline;
-  text-underline-offset: 28px;
-  text-decoration-thickness: 3px;
+  text-underline-offset: 29px;
+  text-decoration-thickness: 6px;
 }
 
 /* HAMBURGER MENU */
@@ -276,7 +300,7 @@ p {
     &::before {
       content: "";
       display: block;
-      height: 1.4px;
+      height: 2px;
       width: 50%;
       margin: auto;
       background-color: $color-hover;
@@ -353,16 +377,18 @@ p {
       }
 
       .mob-menu-li {
-        font-size: 30px;
+        font-size: 1.5rem;
         display: flex;
         flex-direction: column;
         text-decoration: none;
         color: $color-white;
-        font-weight: 300;
-        gap: 12px;
+        gap: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
 
         .active {
           text-decoration: none;
+          color: $color-hover;
         }
 
         .nav-link-item {
@@ -403,6 +429,14 @@ p {
   @include flex;
   @include all-sec-common;
   background-color: $color-bg-section;
+  position: relative;
+  background: linear-gradient(
+      to right,
+      $color-home-bg-dark,
+      $color-home-bg-light
+    ),
+    url("../src/assets/img/bgimg.webp");
+  background-size: cover;
 
   .home-img-section {
     @include flex;
@@ -437,6 +471,8 @@ p {
         color: $color-white;
         border: 2px solid $color-hover;
         cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
 
         &:hover {
           border: 2px solid $color-hover;
@@ -450,6 +486,8 @@ p {
         cursor: pointer;
         background: $color-hover;
         color: $color-white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
 
         &:hover {
           background: $color-black;
@@ -492,10 +530,9 @@ p {
 .btn {
   font-weight: 600;
   transition: all 0.3s ease;
-  padding: 1rem;
+  padding: 0.8rem;
   width: 8rem;
   border-radius: 10px;
-  font-size: 0.85rem;
 }
 
 //-------------------------- About Section ----------------------------//
@@ -504,22 +541,14 @@ p {
   @include flex;
   @include all-sec-common;
   flex-direction: column;
-
-  ul {
-    @include flex;
-    width: 100%;
-    margin: 0 auto;
-  }
-  li {
-    @include flex;
-  }
 }
 
 .about-me-text {
   @include flex;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   width: 60%;
   margin-bottom: 40px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -527,46 +556,11 @@ p {
   margin-bottom: 40px;
 }
 
-.about-icon {
-  margin-right: 15px;
-  font-size: 1.8rem;
-  cursor: default;
-  color: $color-hover;
-}
-
-.about-list-before {
-  @include flex;
-  background-color: $color-hover;
-  cursor: pointer;
-  border: 2px solid $color-hover;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 1.2rem;
-  height: 4rem;
-  width: 13rem;
-}
-
-.about-list {
-  @include flex;
-  background-color: $color-black;
-  cursor: pointer;
-  border: 2px solid $color-hover;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 1.2rem;
-  height: 4rem;
-  width: 13rem;
-
-  &:hover {
-    background-color: $color-black;
-    border: 2px solid $color-hover;
-  }
-}
-
-.about-icon-h2 {
+.about-content-container {
+  width: 100%;
   display: flex;
-  align-items: center;
-  font-size: 1.2rem;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 #education {
@@ -575,16 +569,46 @@ p {
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
-  gap: 2rem;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
+.edu-title {
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  display: flex;
+  position: relative;
+  text-decoration: none;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(45% + 1.5rem);
+    height: 3px;
+    width: 3rem;
+    background: $color-hover;
+    left: 1.6rem;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+
+  &::before {
+    left: 3.5rem;
+    width: 0.2rem;
+  }
+}
+
 .education-card-content {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1.5rem;
   align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .education-card-details {
@@ -592,109 +616,65 @@ p {
   background: $color-black;
   background-color: $color-content-bg-dark;
   border-radius: 10px;
-  border: 2px solid $color-project-border;
   text-align: left;
   min-height: 10rem;
   color: $about-content-color;
+  transition: all 0.3s ease;
+  min-height: 130px;
+  width: 45%;
+  flex-basis: calc(50% - 20px);
 
   &:hover {
-    border: 2px solid $color-hover;
-    background-image: linear-gradient(
-      to top,
-      $color-content-bg-light 0%,
-      $color-black 10%,
-      $color-content-bg-light 100%
-    );
+    background: $color-bg-section;
   }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+.skills-interests-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
 }
 
 #skills {
   display: flex;
-  justify-content: center;
   margin: 0 auto;
   flex-direction: column;
-  width: 100%;
-  gap: 2rem;
+  width: 50%;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
-.skills-content {
+.skills-content-container {
   width: 100%;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0 5rem;
+  display: flex;
   flex-wrap: wrap;
-}
+  margin: 0 auto;
+  gap: 1rem;
+  align-items: flex-start;
 
-.skills-card-content {
-  @include flex;
-  width: 100%;
-  flex-direction: column;
-  border-radius: 10px;
-  text-align: center;
-  height: 11rem;
-  width: 12rem;
-  background-color: $color-content-bg-dark;
-  border: 2px solid $color-project-border;
-  color: $about-content-color;
+  .skills-content {
+    background-color: $color-content-bg-dark;
+    padding: 12px 20px;
+    border-radius: 0.4rem;
+    width: fit-content;
+    border: 2px solid $color-hover;
+    transition: all 0.3s ease;
 
-  .skills-icon {
-    font-size: 5rem;
-    transition: 0.5s ease;
+    &:hover {
+      background: $color-bg-section;
+    }
   }
-
-  &:hover .skills-icon {
-    font-size: 7rem;
-    @include flex;
-  }
-
-  &:hover h4 {
-    display: none;
-  }
-}
-
-.skills-icon-html:hover {
-  border: rgba(244, 122, 51, 0.486) 2px solid;
-  background-color: rgba(244, 122, 51, 0.612);
-}
-
-.skills-icon-css:hover {
-  border: rgba(33, 75, 229, 0.489) 2px solid;
-  background-color: rgba(33, 75, 229, 0.61);
-}
-
-.skills-icon-js:hover {
-  border: rgba(240, 218, 79, 0.485) 2px solid;
-  background-color: rgba(240, 218, 79, 0.612);
-}
-
-.skills-icon-boot:hover {
-  border: rgba(111, 16, 244, 0.488) 2px solid;
-  background-color: rgba(111, 16, 244, 0.614);
-}
-
-.skills-icon-sass:hover {
-  border: rgba(207, 100, 154, 0.488) 2px solid;
-  background-color: rgba(207, 100, 154, 0.611);
-}
-
-.skills-icon-react:hover {
-  border: rgba(20, 156, 202, 0.489) 2px solid;
-  background-color: rgba(20, 156, 202, 0.603);
-}
-.skills-icon-jq:hover {
-  border: rgba(7, 104, 173, 0.484) 2px solid;
-  background-color: rgba(7, 104, 173, 0.611);
 }
 
 #interests {
   display: flex;
-  justify-content: center;
   margin: 0 auto;
   flex-direction: column;
-  width: 100%;
-  gap: 2rem;
+  width: 50%;
   padding-left: 3rem;
   padding-right: 3rem;
 }
@@ -726,9 +706,8 @@ p {
       }
 
       .project-title {
-        font-weight: 600;
-        color: $color-hover;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
       }
     }
   }
@@ -738,16 +717,19 @@ p {
   @include flex;
   margin: 0 auto;
   overflow: hidden;
-  font-weight: 600;
-  font-size: 0.85rem;
   border-radius: 7px;
   transition: all 0.3s ease;
-  padding: 0.6rem 5rem;
+  padding: 0.6rem 3rem;
   margin-top: 1rem;
   color: $color-white;
   border: 2px solid $color-project-border;
   cursor: pointer;
   background-color: $color-content-bg-dark;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .project-card {
@@ -760,22 +742,15 @@ p {
   height: fit-content;
   border-radius: 10px;
   background-color: $color-black;
-  border: $color-project-border 2px solid;
   transition: 0.3s ease;
   background-color: $color-content-bg-dark;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
   &:hover {
-    background-image: linear-gradient(
-      to top,
-      $color-content-bg-light 0%,
-      $color-black 10%,
-      $color-content-bg-light 100%
-    );
-    border: $color-hover 2px solid;
-
     -ms-transform: scale(1.02);
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
     &:hover .project-btn {
       border: 2px solid $color-hover;
@@ -805,6 +780,14 @@ p {
   @include flex;
   @include all-sec-common;
   flex-direction: column;
+  position: relative;
+  background: linear-gradient(
+      to left,
+      $color-home-bg-dark,
+      $color-home-bg-light
+    ),
+    url("../src/assets/img/bgimg.webp");
+  background-size: cover;
 
   .contact-main-section {
     @include flex;
@@ -828,10 +811,6 @@ p {
       @include flex;
       text-align: center;
       gap: 0.5rem;
-
-      p {
-        font-size: larger;
-      }
     }
   }
 }
@@ -865,7 +844,7 @@ p {
 }
 
 .link-a-phone {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 .contact-icon {
@@ -898,10 +877,11 @@ p {
   height: 2.8rem;
   border: none;
   color: $color-white;
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 400;
 
   &:active {
     outline: 10px solid transparent;
@@ -915,6 +895,7 @@ p {
 
 textarea {
   resize: vertical;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .resize-none {
@@ -924,9 +905,11 @@ textarea {
 }
 
 .form-p {
-  letter-spacing: 0.025em;
-  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
   padding-bottom: 0.2rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
 }
 
 .form-btn {
@@ -934,17 +917,21 @@ textarea {
   font-size: 0.85rem;
   transition: all 0.3s ease;
   padding: 1rem;
-  width: 8rem;
+  width: 9rem;
   border-radius: 10px;
   background: none;
   color: $color-white;
   border: 2px solid $color-project-border;
   cursor: pointer;
+  font-family: "Source Sans 3", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
   &:hover {
     border: 2px solid $color-hover;
     background: $color-hover;
     color: $color-white;
+    transform: translateY(-3px);
   }
 }
 
@@ -1013,6 +1000,15 @@ textarea {
   #home {
     min-height: 95vh;
     height: fit-content;
+    .home-text-section {
+      .typewriter-text {
+        font-size: 1.65rem;
+      }
+      h1,
+      .myname {
+        font-size: 3rem;
+      }
+    }
   }
 
   .project-card-container {
@@ -1066,6 +1062,12 @@ textarea {
     padding-top: 3rem;
     padding-bottom: 4rem;
     min-height: 70vh;
+    background: linear-gradient(
+        to right,
+        $color-home-bg-dark,
+        $color-home-bg-light
+      ),
+      url("../src/assets/img/bgimg.webp");
 
     .home-text-section {
       width: 100%;
@@ -1085,7 +1087,6 @@ textarea {
   }
 
   .about-me-text {
-    font-size: 1.1rem;
     width: 90%;
   }
 
@@ -1095,12 +1096,10 @@ textarea {
   }
 
   .education-card-content {
-    padding: 0 1rem;
+    flex-direction: column;
   }
-
-  .skills-content {
-    gap: 1.2rem;
-    padding: 0 1rem;
+  .education-card-details {
+    width: 100%;
   }
 }
 
@@ -1116,15 +1115,27 @@ textarea {
 
   #education {
     .education-card-content {
-      // padding: 0 3rem;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
     .education-card-details {
-      padding: 1rem;
       min-height: 120px;
     }
+  }
+
+  #skills {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  #interests {
+    width: 100%;
+  }
+
+  .skills-interests-container {
+    width: 100%;
+    flex-direction: column;
   }
 
   #contact {
@@ -1169,75 +1180,13 @@ textarea {
     }
   }
 
-  .about-icon-h2 {
-    padding: 0 1rem;
-    font-size: 1.2rem;
-  }
-
-  #about {
-    ul {
-      width: 100%;
-      padding: 0 5rem;
-      margin: 0 auto;
-
-      .about-list-before,
-      .about-list {
-        font-size: 1rem;
-      }
-    }
-  }
-
   .about-me-text {
-    font-size: 1rem;
     width: 95%;
-  }
-
-  #education {
-    .education-card-content {
-      padding: 0 2rem;
-    }
-
-    .education-card-details {
-      padding: 1rem;
-      min-height: 120px;
-    }
-  }
-
-  #skills,
-  #interests {
-    .skills-content {
-      padding: 0 2rem;
-      justify-content: center;
-      gap: 1.2rem;
-      padding: 0 4rem;
-    }
-
-    .skills-card-content {
-      height: 10rem;
-      width: 11rem;
-    }
   }
 
   .project-card-container {
     .project-card {
       width: 90%;
-    }
-  }
-
-  .scroll-to-top-button {
-    @keyframes scrollToTop {
-      0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-
-      100% {
-        transform: translateX(0);
-        opacity: 0.5;
-      }
-    }
-    &.visible {
-      opacity: 0.5;
     }
   }
 }
@@ -1254,13 +1203,18 @@ textarea {
     padding-right: 0.6rem;
   }
 
+  .title {
+    font-size: 3rem;
+  }
+
+  .edu-title {
+    font-size: 1.8rem;
+  }
+
   #home {
     gap: 1rem;
 
     .home-text-section {
-      .typewriter-text {
-        font-size: 1.4rem;
-      }
       h1 {
         font-size: 2.5rem;
 
@@ -1288,19 +1242,6 @@ textarea {
           gap: 15px;
         }
       }
-    }
-  }
-
-  #skills,
-  #interests {
-    .skills-content {
-      padding: 0 1.2rem;
-      gap: 1rem;
-    }
-
-    .skills-card-content {
-      height: 10rem;
-      width: 11rem;
     }
   }
 
@@ -1356,67 +1297,12 @@ textarea {
         width: 90%;
       }
     }
-
-    .home-text-section {
-      h1 {
-        font-size: 2.2rem;
-
-        .myname {
-          font-size: 3rem;
-        }
-      }
-    }
-  }
-
-  #about {
-    ul {
-      padding: 0 2rem;
-
-      .about-list-before,
-      .about-list {
-        font-size: 0.9rem;
-        height: 3.2rem;
-        width: 8rem;
-      }
-    }
-  }
-
-  .about-icon-h2 {
-    padding: 0 0.5rem;
-    font-size: 1.1rem;
   }
 
   #education {
-    h2 {
-      font-size: 1.5rem;
-    }
-    .education-card-content {
-      padding: 0 0.8rem;
-    }
-
     .education-card-details {
-      padding: 1rem;
+      padding: 1.4rem;
       min-height: 140px;
-    }
-  }
-
-  #skills,
-  #interests {
-    .skills-content {
-      padding: 0 0.8rem;
-    }
-
-    .skills-card-content {
-      height: 9rem;
-      width: 9rem;
-
-      .skills-icon {
-        font-size: 4rem;
-
-        &:hover {
-          font-size: 6rem;
-        }
-      }
     }
   }
 
@@ -1430,9 +1316,6 @@ textarea {
       .contact-social-container {
         width: 90%;
         gap: 0.5rem;
-        p {
-          font-size: 1.2rem;
-        }
 
         .contact-social-content {
           overflow-y: auto;

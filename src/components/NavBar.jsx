@@ -50,7 +50,7 @@ export default function NavBar() {
           <span>R</span>ushi<span>B</span>utani
         </div>
 
-        <div className="nav-links-n font-heading">
+        <div className="nav-links-n font-title">
           <Link
             activeClass="active"
             to="home"
@@ -118,7 +118,7 @@ export default function NavBar() {
                   <span>R</span>ushi<span>B</span>utani
                 </div>
               </div>
-              <div className="mob-menu-li font-heading">
+              <div className="mob-menu-li font-title">
                 <Link
                   activeClass="active"
                   to="home"

@@ -1,65 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import Education from "./Education";
 import Skills from "./Skills";
 import Interests from "./Interests";
 
 export default function About() {
-  const [educationData, setEducationData] = useState(false);
-  const [skillData, setSkillData] = useState(true);
-  const [interestData, setInterestData] = useState(false);
-
   return (
     <>
       <section id="about">
         <p className="section-text-p1">Get To Know More About Rushi</p>
-        <h1 className="title font-heading">About Me</h1>
+        <h1 className="title font-heading">ABOUT ME</h1>
 
         <p className="about-me-text">
-          Hi, i'm Rushi Butani. I'm a Front-end Developer based in Gujarat,
+          Hi, i'm Rushi Butani. I'm a Frontend Web Developer based in Gujarat,
           India. Seeking many ways to improve my skills through problem-solving
           and creating various projects!
         </p>
 
-        <div className="w-full mb-40">
-          <ul className="font-heading">
-            <li
-              onClick={() =>
-                setEducationData(true) &
-                setSkillData(false) &
-                setInterestData(false)
-              }
-              className={`${
-                educationData ? "about-list-before" : "about-list"
-              }`}
-            >
-              Education / Courses
-            </li>
-            <li
-              onClick={() =>
-                setEducationData(false) &
-                setSkillData(true) &
-                setInterestData(false)
-              }
-              className={`${skillData ? "about-list-before" : "about-list"}`}
-            >
-              Skills
-            </li>
-            <li
-              onClick={() =>
-                setEducationData(false) &
-                setSkillData(false) &
-                setInterestData(true)
-              }
-              className={`${interestData ? "about-list-before" : "about-list"}`}
-            >
-              Interests
-            </li>
-          </ul>
+        <div className="about-content-container">
+          <div>
+            <Education />
+          </div>
+          <div className="skills-interests-container">
+            <Skills />
+            <Interests />
+          </div>
         </div>
-
-        {educationData && <Education />}
-        {skillData && <Skills />}
-        {interestData && <Interests />}
       </section>
     </>
   );

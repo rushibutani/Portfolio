@@ -38,7 +38,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <p className="section-text-p1">Browse My Recent</p>
-      <h1 className="title mb-40 font-heading">My Projects</h1>
+      <h1 className="title mb-40 font-heading">MY PROJECTS</h1>
 
       <div className="w-full project-card-container">
         <div className="project-card">
@@ -46,7 +46,7 @@ const Projects = () => {
             <img src={projectimg1} alt="src" />
           </div>
           <div className="project-title-a">
-            <h4 className="project-title font-content">My Portfolio</h4>
+            <h4 className="project-title font-title">My Portfolio</h4>
 
             <p>
               My Portfolio for introducing myself digitally. It is built using
@@ -54,7 +54,7 @@ const Projects = () => {
             </p>
 
             <button
-              className="project-btn font-heading"
+              className="project-btn font-title"
               onClick={githubIconButton1}
             >
               GitHub
@@ -67,7 +67,7 @@ const Projects = () => {
             <img src={projectimg2} alt="src" />
           </div>
           <div className="project-title-a">
-            <h4 className="project-title font-content">iEducate</h4>
+            <h4 className="project-title font-title">iEducate</h4>
 
             <p>
               Static website to showcase the future of education. It is built
@@ -75,7 +75,7 @@ const Projects = () => {
             </p>
 
             <button
-              className="project-btn font-heading"
+              className="project-btn font-title"
               onClick={githubIconButton2}
             >
               GitHub
@@ -88,12 +88,12 @@ const Projects = () => {
             <img src={projectimg3} alt="src" />
           </div>
           <div className="project-title-a">
-            <h4 className="project-title font-content">Xiaomi Website Clone</h4>
+            <h4 className="project-title font-title">Xiaomi Website Clone</h4>
 
             <p>Xiaomi official website clone using HTML, CSS and JavaScript.</p>
 
             <button
-              className="project-btn font-heading"
+              className="project-btn font-title"
               onClick={githubIconButton3}
             >
               GitHub
@@ -106,12 +106,12 @@ const Projects = () => {
             <img src={projectimg4} alt="src" />
           </div>
           <div className="project-title-a">
-            <h4 className="project-title font-content">Veterinary PSD Clone</h4>
+            <h4 className="project-title font-title">Veterinary PSD Clone</h4>
 
             <p>Veterinary PSD website design built using HTML and CSS.</p>
 
             <button
-              className="project-btn font-heading"
+              className="project-btn font-title"
               onClick={githubIconButton4}
             >
               GitHub
@@ -124,12 +124,12 @@ const Projects = () => {
             <img src={projectimg5} alt="src" />
           </div>
           <div className="project-title-a">
-            <h4 className="project-title font-content">Tesla Website Clone</h4>
+            <h4 className="project-title font-title">Tesla Website Clone</h4>
 
             <p>Tesla official website clone using HTML, CSS and JavaScript.</p>
 
             <button
-              className="project-btn font-heading"
+              className="project-btn font-title"
               onClick={githubIconButton5}
             >
               GitHub

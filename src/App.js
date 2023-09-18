@@ -58,6 +58,16 @@ function App() {
       isDarkTheme ? "rgb(51, 51, 51)" : "rgb(68, 68, 68)"
     );
 
+    root.style.setProperty(
+      "--color-home-bg-dark",
+      isDarkTheme ? "rgba(10, 10, 10, 0.9)" : "rgba(255, 255, 255, 0.8)"
+    );
+
+    root.style.setProperty(
+      "--color-home-bg-light",
+      isDarkTheme ? "rgba(5, 5, 5, 0.9)" : "rgba(255, 255, 255, 0.9)"
+    );
+
   };
 
   return (
