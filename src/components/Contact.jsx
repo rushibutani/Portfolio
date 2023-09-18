@@ -114,7 +114,7 @@ export default function Contact() {
         <div className="contact-main-section">
           <div className="first-half-contact flex flex-col justify-center items-center">
             <div className="flex items-center contact-img">
-              <img src={myImg2} alt="Rushi Profile" />
+              <img src={myImg2} alt="Rushi Profile" loading="lazy" />
             </div>
 
             <div className="contact-social-container">
@@ -155,7 +155,9 @@ export default function Contact() {
               {errMsg && <p className="err-msg">{errMsg}</p>}
               {successMsg && <p>{successMsg}</p>}
               <div>
-                <p className="form-p">NAME</p>
+                <label htmlFor="username" className="form-p">
+                  NAME
+                </label>
                 <input
                   onChange={(e) => setUserName(e.target.value)}
                   value={userName}
@@ -168,7 +170,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <p className="form-p">PHONE NUMBER</p>
+                <label htmlFor="phone" className="form-p">
+                  PHONE NUMBER
+                </label>
                 <input
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   value={phoneNumber}
@@ -181,7 +185,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <p className="form-p">EMAIL</p>
+                <label htmlFor="email" className="form-p">
+                  EMAIL
+                </label>
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
@@ -194,7 +200,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <p className="form-p">SUBJECT</p>
+                <label htmlFor="text" className="form-p">
+                  SUBJECT
+                </label>
                 <input
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
@@ -207,7 +215,9 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <p className="form-p">MESSAGE</p>
+                <label htmlFor="comments" className="form-p">
+                  MESSAGE
+                </label>
                 <textarea
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}

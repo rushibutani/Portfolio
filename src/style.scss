@@ -2,6 +2,7 @@
 @font-face {
   font-family: Buffalo;
   src: url(../src/assets/fonts/Buffalo.otf);
+  font-display: swap;
 }
 
 :root {
@@ -910,6 +911,7 @@ textarea {
   padding-bottom: 0.2rem;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
+  color: $color-p;
 }
 
 .form-btn {
@@ -1318,7 +1320,6 @@ textarea {
         gap: 0.5rem;
 
         .contact-social-content {
-          overflow-y: auto;
           flex-wrap: wrap;
         }
       }

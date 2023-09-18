@@ -1,32 +1,29 @@
-import React from 'react';
+import React from "react";
 import { useState } from "react";
-import './style.scss';
-import NavBar from "../src/components/NavBar"
-import Home from "../src/components/Home"
-import About from '../src/components/About/About';
-import Projects from '../src/components/Projects';
-import Contact from '../src/components/Contact';
-import ScrollToTopButton from './CommoonComponents/Scroll/ScrollToTopButton';
+import "./style.scss";
+import NavBar from "../src/components/NavBar";
+import Home from "../src/components/Home";
+// import About from '../src/components/About/About';
+// import Projects from "../src/components/Projects";
+// import Contact from "../src/components/Contact";
+import ScrollToTopButton from "./CommoonComponents/Scroll/ScrollToTopButton";
 
-import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { FaSun } from "react-icons/fa"
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { FaSun } from "react-icons/fa";
+
+const About = React.lazy(() => import("../src/components/About/About"));
+const Projects = React.lazy(() => import("../src/components/Projects"));
+const Contact = React.lazy(() => import("../src/components/Contact"));
 
 function App() {
-
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const toggleTheme = () => {
     setIsDarkTheme((prevTheme) => !prevTheme);
 
     const root = document.documentElement;
-    root.style.setProperty(
-      "--color-black",
-      isDarkTheme ? "black" : "white"
-    );
+    root.style.setProperty("--color-black", isDarkTheme ? "black" : "white");
 
-    root.style.setProperty(
-      "--color-white",
-      isDarkTheme ? "white" : "black"
-    );
+    root.style.setProperty("--color-white", isDarkTheme ? "white" : "black");
 
     root.style.setProperty(
       "--color-p",
@@ -67,23 +64,26 @@ function App() {
       "--color-home-bg-light",
       isDarkTheme ? "rgba(5, 5, 5, 0.9)" : "rgba(255, 255, 255, 0.9)"
     );
-
   };
 
   return (
     <>
-      <div id='app'>
+      <div id="app">
         <NavBar />
         <Home />
         <About />
         <Projects />
         <Contact />
-        <ScrollToTopButton />
 
+        <ScrollToTopButton />
         <button onClick={toggleTheme} className="theme-btn">
-          {isDarkTheme ? <BsFillMoonStarsFill className='theme-btn-icon' /> : <FaSun className='theme-btn-icon' />}
+          {isDarkTheme ? (
+            <BsFillMoonStarsFill className="theme-btn-icon" />
+          ) : (
+            <FaSun className="theme-btn-icon" />
+          )}
         </button>
-      </div >
+      </div>
     </>
   );
 }

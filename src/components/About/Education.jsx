@@ -9,7 +9,7 @@ const Education = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
     >
-      <h3 className="edu-title font-title">Education & Courses</h3>
+      <h2 className="edu-title font-title">Education & Courses</h2>
 
       <div className="w-full flex education-card-content items-center">
         <EducationCard
