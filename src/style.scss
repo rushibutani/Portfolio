@@ -10,7 +10,7 @@
   --color-white: white;
   --about-content-color: rgb(206, 206, 206);
   --color-hover: rgb(254, 1, 79);
-  --color-p: rgb(171, 171, 171);
+  --color-p: rgb(220, 220, 220);
   --color-content-bg-dark: rgb(24, 24, 24);
   --color-content-bg-light: rgb(39, 39, 39);
   --color-bg-section: rgb(19, 19, 19);
@@ -75,6 +75,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Source Sans 3", sans-serif;
   line-height: 1.25;
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 h1 {
@@ -87,6 +90,22 @@ p {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1.3rem;
   font-weight: 400;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .font-heading {
@@ -155,6 +174,143 @@ p {
   }
 }
 
+//Loader
+.page {
+  padding: 40px;
+}
+
+#splash {
+  background: #cc1f2f;
+  background-repeat: repeat-y;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: splash 3s ease-in;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  bottom: -170px;
+  width: 3px;
+  background: #fff;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  height: 200px;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: 8px;
+  bottom: -190px;
+  width: 3px;
+  background: #000;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 200px;
+}
+
+#splash .anim {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  transform: translate(-50%, 100%);
+  animation: loader 2s linear;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-50%, 110%);
+  }
+  30% {
+    transform: translate(-50%, 50%);
+  }
+  100% {
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes splash {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(0%, -100%);
+  }
+}
+
+//DarkLightTheme Button
+.toggle-ab {
+  --size: 2rem;
+  position: fixed;
+  left: auto;
+  top: 22px;
+  right: 45px;
+  z-index: 99;
+  opacity: 0.5;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  transition: all 500ms;
+  transform: scale(0.75);
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
+  color: hsl(40, 100%, 50%);
+  box-shadow: inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+      var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+
+  &:checked {
+    transform: scale(0.75);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    color: hsl(240, 100%, 95%);
+    color: hsl(0, 0%, 44%);
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+
 //------------- Scroll Button
 .scroll-to-top-button {
   display: none;
@@ -200,7 +356,7 @@ p {
 
   &:hover {
     transform: translateY(-3px);
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -450,9 +606,11 @@ p {
       padding-bottom: 20px;
       margin: 0 auto;
       width: 100%;
+      height: auto;
       overflow: hidden;
       object-fit: cover;
       vertical-align: middle;
+      aspect-ratio: auto 951/1280;
     }
   }
 
@@ -634,6 +792,10 @@ p {
   }
 }
 
+.border-highlight {
+  border: 2px solid $color-hover;
+}
+
 .skills-interests-container {
   width: 100%;
   margin: 0 auto;
@@ -765,14 +927,15 @@ p {
   height: 12rem;
   overflow: hidden;
   border-radius: 8px;
+  display: block;
 
   img {
     width: 100%;
     height: 100%;
     max-height: 13rem;
     overflow: hidden;
-    border-radius: 0.5rem;
     object-fit: cover;
+    aspect-ratio: auto 1280/900;
   }
 }
 
@@ -812,40 +975,19 @@ p {
       @include flex;
       text-align: center;
       gap: 0.5rem;
+      list-style: none;
+      color: $color-white;
+      cursor: pointer;
+      font-size: 1.3rem;
+      &:hover {
+        color: $color-hover;
+
+        &:hover {
+          color: $color-hover;
+        }
+      }
     }
   }
-}
-
-.link-mail:hover {
-  &:hover .contact-icon {
-    color: $color-hover;
-  }
-  &:hover .link-a {
-    color: $color-hover;
-  }
-}
-
-.link-phonenumber:hover {
-  &:hover .contact-icon {
-    color: $color-hover;
-  }
-
-  &:hover .link-a {
-    color: $color-hover;
-  }
-}
-
-.link-a {
-  color: $color-white;
-  cursor: pointer;
-  text-decoration: none;
-  text-decoration-color: $color-black;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-}
-
-.link-a-phone {
-  font-size: 1.2rem;
 }
 
 .contact-icon {
@@ -952,14 +1094,18 @@ textarea {
   height: fit-content;
 
   .contact-img {
+    width: 100%;
     height: auto;
     overflow: hidden;
-    justify-content: center;
+    display: block;
 
     img {
       width: 100%;
+      height: auto;
       overflow: hidden;
       object-fit: cover;
+      aspect-ratio: auto 1211/1280;
+      vertical-align: middle;
     }
   }
 }
@@ -1040,6 +1186,13 @@ textarea {
 
   .mob-menu {
     @include flex;
+  }
+
+  .toggle-ab {
+    --size: 2.3rem;
+    position: fixed;
+    right: 0;
+    top: 40%;
   }
 
   .theme-btn {

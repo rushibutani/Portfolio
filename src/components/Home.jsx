@@ -2,9 +2,31 @@ import React from "react";
 import myImg1 from "../assets/img/my-img-profile.webp";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion } from "framer-motion";
 
 export default function Home() {
+  const links = [
+    {
+      id: 1,
+      child: (
+        <>
+          <AiFillLinkedin />
+        </>
+      ),
+      href: "https://in.linkedin.com/in/rushibutani",
+      arealabel: "Linkedin",
+    },
+    {
+      id: 2,
+      child: (
+        <>
+          <AiFillGithub />
+        </>
+      ),
+      href: "https://github.com/rushibutani",
+      arealabel: "Github",
+    },
+  ];
+
   const [text] = useTypewriter({
     words: ["Front-End Developer", "Web Designer"],
     loop: true,
@@ -21,27 +43,18 @@ export default function Home() {
     anchor.click();
   };
 
-  const linkedinIconButton = () => {
-    const linkedinProfileUrl = "https://in.linkedin.com/in/rushibutani";
-    window.open(linkedinProfileUrl, "_blank");
-  };
-
-  const githubIconButton = () => {
-    const gitHubProfileUrl = "https://github.com/rushibutani";
-    window.open(gitHubProfileUrl, "_blank");
-  };
-
   return (
     <>
       <section id="home">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="home-img-section"
-        >
-          <img src={myImg1} alt="Rushi Profile" loading="lazy" />
-        </motion.div>
+        <div className="home-img-section">
+          <img
+            src={myImg1}
+            width={951}
+            height={1280}
+            alt="Rushi Profile"
+            loading="lazy"
+          />
+        </div>
 
         <div className="home-text-section">
           <p>Welcome To My World</p>
@@ -80,8 +93,18 @@ export default function Home() {
             </button>
           </div>
           <div className="home-social-icons">
-            <AiFillLinkedin className="icon" onClick={linkedinIconButton} />
-            <AiFillGithub className="icon" onClick={githubIconButton} />
+            {links.map(({ id, child, href, arealabel }) => (
+              <a
+                key={id}
+                href={href}
+                className="icon"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={arealabel}
+              >
+                {child}
+              </a>
+            ))}
           </div>
         </div>
       </section>

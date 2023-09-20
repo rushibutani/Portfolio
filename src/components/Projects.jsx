@@ -6,34 +6,43 @@ import projectimg4 from "../assets/img/vete-logo.webp";
 import projectimg5 from "../assets/img/tesla-logo.webp";
 
 const Projects = () => {
-  const githubIconButton1 = () => {
-    const gitHubProfileUrl = "https://github.com/rushibutani/portfolio";
-    window.open(gitHubProfileUrl, "_blank");
-  };
-
-  const githubIconButton2 = () => {
-    const gitHubProfileUrl =
-      "https://github.com/rushibutani/Website-Clone-Projects/tree/main/iEducate%20Website";
-    window.open(gitHubProfileUrl, "_blank");
-  };
-
-  const githubIconButton3 = () => {
-    const gitHubProfileUrl =
-      "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Xiaomi%20Website%20Clone";
-    window.open(gitHubProfileUrl, "_blank");
-  };
-
-  const githubIconButton4 = () => {
-    const gitHubProfileUrl =
-      "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Veterinarian%20Psd%20Clone";
-    window.open(gitHubProfileUrl, "_blank");
-  };
-
-  const githubIconButton5 = () => {
-    const gitHubProfileUrl =
-      "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Tesla%20Website%20Clone";
-    window.open(gitHubProfileUrl, "_blank");
-  };
+  const projects = [
+    {
+      id: 1,
+      src: projectimg1,
+      title: "My Portfolio",
+      dec: "My Portfolio for introducing myself digitally. It is built using HTML, CSS, SASS, JavaScript and ReactJs.",
+      repo: "https://github.com/rushibutani/portfolio",
+    },
+    {
+      id: 2,
+      src: projectimg2,
+      title: "iEducate",
+      dec: "Static website to showcase the future of education. It is built using HTML, CSS and JavaScript.",
+      repo: "https://github.com/rushibutani/Website-Clone-Projects/tree/main/iEducate%20Website",
+    },
+    {
+      id: 3,
+      src: projectimg3,
+      title: "Xiaomi Website Clone",
+      dec: "Xiaomi official website clone using HTML, CSS and JavaScript.",
+      repo: "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Xiaomi%20Website%20Clone",
+    },
+    {
+      id: 4,
+      src: projectimg4,
+      title: "Veterinary PSD Clone",
+      dec: "Veterinary PSD website design built using HTML and CSS.",
+      repo: "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Veterinarian%20Psd%20Clone",
+    },
+    {
+      id: 5,
+      src: projectimg5,
+      title: "Tesla Website Clone",
+      dec: "Tesla official website clone using HTML, CSS and JavaScript.",
+      repo: "https://github.com/rushibutani/Website-Clone-Projects/tree/main/Tesla%20Website%20Clone",
+    },
+  ];
 
   return (
     <section id="projects">
@@ -41,101 +50,31 @@ const Projects = () => {
       <h1 className="title mb-40 font-heading">MY PROJECTS</h1>
 
       <div className="w-full project-card-container">
-        <div className="project-card">
-          <div className="project-img">
-            <img src={projectimg1} alt="src" />
+        {projects.map(({ id, src, title, dec, repo }) => (
+          <div key={id} className="project-card">
+            <div className="project-img">
+              <img
+                src={src}
+                width={1280}
+                height={900}
+                alt="Projects"
+                loading="lazy"
+              />
+            </div>
+            <div className="project-title-a">
+              <h2 className="project-title font-title">{title}</h2>
+              <p>{dec}</p>
+              <div className="project-btn-container">
+                <button
+                  className="project-btn font-title"
+                  onClick={() => window.open(repo, "_blank")}
+                >
+                  GitHub
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="project-title-a">
-            <h4 className="project-title font-title">My Portfolio</h4>
-
-            <p>
-              My Portfolio for introducing myself digitally. It is built using
-              HTML, CSS, SASS, JavaScript and ReactJs.
-            </p>
-
-            <button
-              className="project-btn font-title"
-              onClick={githubIconButton1}
-            >
-              GitHub
-            </button>
-          </div>
-        </div>
-
-        <div className="project-card">
-          <div className="project-img">
-            <img src={projectimg2} alt="src" />
-          </div>
-          <div className="project-title-a">
-            <h4 className="project-title font-title">iEducate</h4>
-
-            <p>
-              Static website to showcase the future of education. It is built
-              using HTML, CSS and JavaScript.
-            </p>
-
-            <button
-              className="project-btn font-title"
-              onClick={githubIconButton2}
-            >
-              GitHub
-            </button>
-          </div>
-        </div>
-
-        <div className="project-card">
-          <div className="project-img">
-            <img src={projectimg3} alt="src" />
-          </div>
-          <div className="project-title-a">
-            <h4 className="project-title font-title">Xiaomi Website Clone</h4>
-
-            <p>Xiaomi official website clone using HTML, CSS and JavaScript.</p>
-
-            <button
-              className="project-btn font-title"
-              onClick={githubIconButton3}
-            >
-              GitHub
-            </button>
-          </div>
-        </div>
-
-        <div className="project-card">
-          <div className="project-img">
-            <img src={projectimg4} alt="src" />
-          </div>
-          <div className="project-title-a">
-            <h4 className="project-title font-title">Veterinary PSD Clone</h4>
-
-            <p>Veterinary PSD website design built using HTML and CSS.</p>
-
-            <button
-              className="project-btn font-title"
-              onClick={githubIconButton4}
-            >
-              GitHub
-            </button>
-          </div>
-        </div>
-
-        <div className="project-card">
-          <div className="project-img">
-            <img src={projectimg5} alt="src" />
-          </div>
-          <div className="project-title-a">
-            <h4 className="project-title font-title">Tesla Website Clone</h4>
-
-            <p>Tesla official website clone using HTML, CSS and JavaScript.</p>
-
-            <button
-              className="project-btn font-title"
-              onClick={githubIconButton5}
-            >
-              GitHub
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

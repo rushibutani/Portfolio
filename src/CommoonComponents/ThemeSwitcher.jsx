@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../style.scss";
-// import { BsFillArrowUpSquareFill } from "react-icons/bs";
 
 const ThemeSwitcher = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);

@@ -12,8 +12,8 @@ export default function About() {
 
         <p className="about-me-text">
           Hi, i'm Rushi Butani. I'm a Frontend Web Developer based in Gujarat,
-          India. Seeking many ways to improve my skills through problem-solving
-          and creating various projects!
+          India. Excited for improving my skills and learning new technologies.
+          I'm open to learn and work with any web technology.
         </p>
 
         <div className="about-content-container">

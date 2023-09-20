@@ -1,18 +1,35 @@
 import React, { useRef, useState } from "react";
 import myImg2 from "../assets/img/RbImg2b.webp";
 import emailjs from "@emailjs/browser";
-import { Link } from "react-scroll";
-import { FaLinkedin } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
-import { GrInstagram } from "react-icons/gr";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { BiSolidPhone } from "react-icons/bi";
+import { SocialLinks } from "../CommoonComponents/SocialLinks";
 
 export default function Contact() {
-  const contactNumber = "+919638293911";
-  const handlecontactNumberClick = () => {
-    window.location.href = `tel:${contactNumber}`;
-  };
+  const links = [
+    {
+      id: 1,
+      child: (
+        <>
+          <MdMail />
+          rushibutani@gmail.com
+        </>
+      ),
+      href: "mailto:rushibutani@gmail.com",
+      arealabel: "Email",
+    },
+    {
+      id: 2,
+      child: (
+        <>
+          <BiSolidPhone />
+          +919638293911
+        </>
+      ),
+      href: "tel:+919638293911",
+      arealabel: "Phone Number",
+    },
+  ];
 
   const form = useRef();
   const sendEmail = (e) => {
@@ -80,32 +97,6 @@ export default function Contact() {
     }
   };
 
-  const emailAddress = "rushibutani@gmail.com";
-  const mailToButton = () => {
-    const mailtoLink = `mailto:${emailAddress}`;
-    window.location.href = mailtoLink;
-  };
-
-  const handleLinkedInClick = () => {
-    const linkedinProfileUrl = "https://in.linkedin.com/in/rushibutani";
-    window.open(linkedinProfileUrl, "_blank");
-  };
-
-  const handleFacebookClick = () => {
-    const facebookProfileUrl = "https://www.facebook.com/rushibutani";
-    window.open(facebookProfileUrl, "_blank");
-  };
-
-  const handleInstagramClick = () => {
-    const instagramProfileUrl = "https://www.instagram.com/rushibutani/";
-    window.open(instagramProfileUrl, "_blank");
-  };
-
-  const handleTwitterClick = () => {
-    const twitterProfileUrl = "https://twitter.com/rushibutani_";
-    window.open(twitterProfileUrl, "_blank");
-  };
-
   return (
     <>
       <section id="contact">
@@ -113,41 +104,30 @@ export default function Contact() {
         <h1 className="title mb-40 font-heading">CONTACT ME</h1>
         <div className="contact-main-section">
           <div className="first-half-contact flex flex-col justify-center items-center">
-            <div className="flex items-center contact-img">
-              <img src={myImg2} alt="Rushi Profile" loading="lazy" />
+            <div className="contact-img">
+              <img
+                src={myImg2}
+                width={1211}
+                height={1280}
+                loading="lazy"
+                alt="Rushi Profile"
+              />
             </div>
-
-            <div className="contact-social-container">
-              <div className="contact-social-content link-mail">
-                <MdMail className="contact-icon" onClick={mailToButton} />
-                <p>
-                  <Link
-                    to="mailto:rushibutani@gmail.com"
+            <ul className="contact-social-container">
+              {links.map(({ id, child, href, arealabel }) => (
+                <li key={id}>
+                  <a
+                    href={href}
+                    className="contact-social-content"
                     target="_blank"
-                    onClick={mailToButton}
-                    className="link-a"
+                    rel="noreferrer"
+                    aria-label={arealabel}
                   >
-                    rushibutani@gmail.com
-                  </Link>
-                </p>
-              </div>
-              <div className="contact-social-content link-phonenumber">
-                <BiSolidPhone
-                  className="contact-icon"
-                  onClick={handlecontactNumberClick}
-                />
-                <p>
-                  <Link
-                    to={`tel:${contactNumber}`}
-                    target="_blank"
-                    className="link-a link-a-phone"
-                    onClick={handlecontactNumberClick}
-                  >
-                    +919638293911
-                  </Link>
-                </p>
-              </div>
-            </div>
+                    {child}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div id="form">
@@ -155,10 +135,11 @@ export default function Contact() {
               {errMsg && <p className="err-msg">{errMsg}</p>}
               {successMsg && <p>{successMsg}</p>}
               <div>
-                <label htmlFor="username" className="form-p">
+                <label htmlFor="name" className="form-p">
                   NAME
                 </label>
                 <input
+                  id="name"
                   onChange={(e) => setUserName(e.target.value)}
                   value={userName}
                   name="name"
@@ -170,10 +151,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="form-p">
+                <label htmlFor="phonenumber" className="form-p">
                   PHONE NUMBER
                 </label>
                 <input
+                  id="phonenumber"
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   value={phoneNumber}
                   name="phonenumber"
@@ -189,6 +171,7 @@ export default function Contact() {
                   EMAIL
                 </label>
                 <input
+                  id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   name="email"
@@ -200,10 +183,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="text" className="form-p">
+                <label htmlFor="subject" className="form-p">
                   SUBJECT
                 </label>
                 <input
+                  id="subject"
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
                   name="subject"
@@ -215,10 +199,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="comments" className="form-p">
+                <label htmlFor="message" className="form-p">
                   MESSAGE
                 </label>
                 <textarea
+                  id="message"
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
                   name="message"
@@ -244,20 +229,7 @@ export default function Contact() {
       </section>
 
       <footer id="footer">
-        <div className="flex footer-icon-container">
-          <span className="footer-icon" onClick={handleLinkedInClick}>
-            <FaLinkedin />
-          </span>
-          <span className="footer-icon" onClick={handleInstagramClick}>
-            <GrInstagram />
-          </span>
-          <span className="footer-icon" onClick={handleTwitterClick}>
-            <BsTwitter />
-          </span>
-          <span className="footer-icon" onClick={handleFacebookClick}>
-            <BsFacebook />
-          </span>
-        </div>
+        <SocialLinks />
         <p>Copyright &#169; 2023 Rushi Butani. All Rights Reserved.</p>
       </footer>
     </>
