@@ -52,6 +52,9 @@ export const DarkLightTheme = () => {
 
   return (
     <>
+      <label htmlFor="toggle" style={{ display: "none" }}>
+        Toggle Theme
+      </label>
       <input
         type="checkbox"
         onClick={toggleTheme}

@@ -12,22 +12,22 @@ export default function Contact() {
       child: (
         <>
           <MdMail />
-          rushibutani@gmail.com
+          <span>rushibutani@gmail.com</span>
         </>
       ),
       href: "mailto:rushibutani@gmail.com",
-      arealabel: "Email",
+      arealabel: "Email: rushibutani@gmail.com",
     },
     {
       id: 2,
       child: (
         <>
           <BiSolidPhone />
-          +919638293911
+          <span>+919638293911</span>
         </>
       ),
       href: "tel:+919638293911",
-      arealabel: "Phone Number",
+      arealabel: "Phone: +919638293911",
     },
   ];
 
