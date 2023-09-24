@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import NavBar from "../src/components/NavBar";
 import ScrollToTopButton from "./CommoonComponents/ScrollToTopButton";
@@ -10,17 +10,31 @@ const Projects = React.lazy(() => import("../src/components/Projects"));
 const Contact = React.lazy(() => import("../src/components/Contact"));
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
-      <Suspense fallback={<Loader />}>
-        <NavBar />
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
-        <ScrollToTopButton />
-        <DarkLightTheme />
-      </Suspense>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          <NavBar />
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+          <ScrollToTopButton />
+          <DarkLightTheme />
+        </div>
+      )}
     </>
   );
 }

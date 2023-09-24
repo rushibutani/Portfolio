@@ -177,6 +177,19 @@ a {
 //Loader
 .page {
   padding: 40px;
+
+  header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-family: "Source Sans 3", sans-serif;
+      position: fixed;
+      top: 50%;
+    }
+  }
 }
 
 #splash {
@@ -239,7 +252,7 @@ a {
   left: 50%;
   width: 100px;
   transform: translate(-50%, 100%);
-  animation: loader 2s linear;
+  animation: loader 6s linear;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }
@@ -632,6 +645,7 @@ a {
         cursor: pointer;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-weight: 700;
 
         &:hover {
           border: 2px solid $color-hover;
@@ -647,6 +661,7 @@ a {
         color: $color-white;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-weight: 700;
 
         &:hover {
           background: $color-black;

@@ -5,8 +5,7 @@ export const Loader = () => {
     <>
       <div class="page">
         <header>
-          <h1>Welcome</h1>
-          <p>Just a test for a loading information. Press reload to repeat.</p>
+          <h1>Hello there!</h1>
         </header>
       </div>
       <div id="splash">
