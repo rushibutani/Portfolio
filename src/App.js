@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState, Suspense, useRef } from "react";
 import "./style.scss";
 import NavBar from "../src/components/NavBar";
 import ScrollToTopButton from "./CommoonComponents/ScrollToTopButton";
@@ -11,13 +11,21 @@ const Contact = React.lazy(() => import("../src/components/Contact"));
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const isMounted = useRef(true);
 
   useEffect(() => {
+    isMounted.current = true;
+
     const timeout = setTimeout(() => {
-      setLoading(false);
+      if (isMounted.current) {
+        setLoading(false);
+      }
     }, 2000);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      isMounted.current = false;
+    };
   }, []);
 
   return (

@@ -52,7 +52,7 @@ export const DarkLightTheme = () => {
 
   return (
     <>
-      <label htmlFor="toggle" style={{ display: "none" }}>
+      <label htmlFor="toggle" className="visually-hidden">
         Toggle Theme
       </label>
       <input

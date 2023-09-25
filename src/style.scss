@@ -252,7 +252,7 @@ a {
   left: 50%;
   width: 100px;
   transform: translate(-50%, 100%);
-  animation: loader 6s linear;
+  animation: loader 2s linear;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }
@@ -322,6 +322,18 @@ a {
   &:hover {
     opacity: 1;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 //------------- Scroll Button
@@ -645,7 +657,6 @@ a {
         cursor: pointer;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 700;
 
         &:hover {
           border: 2px solid $color-hover;
@@ -661,7 +672,6 @@ a {
         color: $color-white;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 700;
 
         &:hover {
           background: $color-black;
