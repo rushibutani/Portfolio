@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import "./style.scss";
 import NavBar from "../src/components/NavBar";
 import ScrollToTopButton from "./CommoonComponents/ScrollToTopButton";
@@ -15,26 +15,28 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div>
-          <NavBar />
-          <Home />
-          <About />
-          <Projects />
-          <Contact />
-          <ScrollToTopButton />
-          <DarkLightTheme />
-        </div>
-      )}
+      <Suspense fallback={<Loader />}>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div>
+            <NavBar />
+            <Home />
+            <About />
+            <Projects />
+            <Contact />
+            <ScrollToTopButton />
+            <DarkLightTheme />
+          </div>
+        )}
+      </Suspense>
     </>
   );
 }
