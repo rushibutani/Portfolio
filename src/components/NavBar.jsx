@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../style.scss";
-import { Link } from "react-scroll";
 import { MobSocialLinks } from "../CommoonComponents/MobSocialLinks";
 
 export default function NavBar() {
@@ -10,21 +9,82 @@ export default function NavBar() {
   const links = [
     {
       id: 1,
+      href: "#home",
       link: "home",
     },
     {
       id: 2,
+      href: "#about",
       link: "about",
     },
     {
       id: 3,
+      href: "#projects",
       link: "projects",
     },
     {
       id: 4,
+      href: "#contact",
       link: "contact",
     },
   ];
+
+  const [activeLink, setActiveLink] = useState("home");
+  const [scrolling, setScrolling] = useState(false);
+
+  const handleClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const newOffsetTop = targetElement.offsetTop - 60;
+      setScrolling(true);
+      window.scrollTo({
+        top: newOffsetTop,
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        setActiveLink(targetId);
+        setScrolling(false);
+      }, 700);
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrolling) {
+        const homeElement = document.getElementById("home");
+        const aboutElement = document.getElementById("about");
+        const projectsElement = document.getElementById("projects");
+        const contactElement = document.getElementById("contact");
+
+        const scrollPosition = window.scrollY;
+
+        if (
+          scrollPosition >= homeElement.offsetTop - 80 &&
+          scrollPosition < aboutElement.offsetTop - 80
+        ) {
+          setActiveLink("home");
+        } else if (
+          scrollPosition >= aboutElement.offsetTop - 80 &&
+          scrollPosition < projectsElement.offsetTop - 80
+        ) {
+          setActiveLink("about");
+        } else if (
+          scrollPosition >= projectsElement.offsetTop - 80 &&
+          scrollPosition < contactElement.offsetTop - 80
+        ) {
+          setActiveLink("projects");
+        } else if (scrollPosition >= contactElement.offsetTop - 80) {
+          setActiveLink("contact");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolling]);
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
@@ -47,18 +107,15 @@ export default function NavBar() {
         </div>
 
         <ul className="nav-links-n font-title">
-          {links.map(({ id, link }) => (
+          {links.map(({ id, href, link }) => (
             <li key={id} className="nav-link-item">
-              <Link
-                to={link}
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={200}
+              <a
+                href={href}
+                className={activeLink === link ? "active" : ""}
+                onClick={(e) => handleClick(e, link)}
               >
                 {link}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -86,19 +143,15 @@ export default function NavBar() {
               </div>
 
               <ul className="mob-menu-li font-title">
-                {links.map(({ id, link }) => (
+                {links.map(({ id, href, link }) => (
                   <li key={id} className="nav-link-item">
-                    <Link
-                      to={link}
-                      activeClass="active"
-                      spy={true}
-                      smooth={true}
-                      offset={-80}
-                      duration={200}
-                      onClick={() => setShowMenu(false)}
+                    <a
+                      href={href}
+                      className={activeLink === link ? "active" : ""}
+                      onClick={(e) => handleClick(e, link)}
                     >
                       {link}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
