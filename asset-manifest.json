@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.96aecdc5.css",
-    "main.js": "/portfolio/static/js/main.65f8e06f.js",
+    "main.css": "/portfolio/static/css/main.2283bc03.css",
+    "main.js": "/portfolio/static/js/main.bf2f87be.js",
     "static/js/741.1430c0a8.chunk.js": "/portfolio/static/js/741.1430c0a8.chunk.js",
     "static/js/839.6c87040f.chunk.js": "/portfolio/static/js/839.6c87040f.chunk.js",
     "static/js/54.4a764f60.chunk.js": "/portfolio/static/js/54.4a764f60.chunk.js",
@@ -18,8 +18,8 @@
     "static/media/mi-logo.webp": "/portfolio/static/media/mi-logo.8acef469ddaf31076861.webp",
     "static/media/RushiLogo.webp": "/portfolio/static/media/RushiLogo.f73c36df9f68a8ab14e5.webp",
     "index.html": "/portfolio/index.html",
-    "main.96aecdc5.css.map": "/portfolio/static/css/main.96aecdc5.css.map",
-    "main.65f8e06f.js.map": "/portfolio/static/js/main.65f8e06f.js.map",
+    "main.2283bc03.css.map": "/portfolio/static/css/main.2283bc03.css.map",
+    "main.bf2f87be.js.map": "/portfolio/static/js/main.bf2f87be.js.map",
     "741.1430c0a8.chunk.js.map": "/portfolio/static/js/741.1430c0a8.chunk.js.map",
     "839.6c87040f.chunk.js.map": "/portfolio/static/js/839.6c87040f.chunk.js.map",
     "54.4a764f60.chunk.js.map": "/portfolio/static/js/54.4a764f60.chunk.js.map",
@@ -28,7 +28,7 @@
     "493.2dade141.chunk.js.map": "/portfolio/static/js/493.2dade141.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.96aecdc5.css",
-    "static/js/main.65f8e06f.js"
+    "static/css/main.2283bc03.css",
+    "static/js/main.bf2f87be.js"
   ]
 }
