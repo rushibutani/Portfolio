@@ -66,12 +66,19 @@ export default function Contact() {
       .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
   };
 
+  const phoneNumberValidation = (phoneNumber) => {
+    const phonePattern = /^\d{10}$/;
+    return phonePattern.test(phoneNumber);
+  };
+
   const handleSend = (e) => {
     e.preventDefault();
     if (userName === "") {
       setErrMsg("Username is required!");
     } else if (phoneNumber === "") {
       setErrMsg("Phone number is required!");
+    } else if (!phoneNumberValidation(phoneNumber)) {
+      setErrMsg("Please enter valid phone number!");
     } else if (email === "") {
       setErrMsg("Please give your Email!");
     } else if (!emailValidation(email)) {
@@ -156,7 +163,14 @@ export default function Contact() {
                 </label>
                 <input
                   id="phonenumber"
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  onChange={(e) => {
+                    const inputValue = e.target.value;
+                    const sanitizedValue = inputValue.replace(
+                      /[^0-9+\-\s]/g,
+                      ""
+                    );
+                    setPhoneNumber(sanitizedValue);
+                  }}
                   value={phoneNumber}
                   name="phonenumber"
                   className={`${

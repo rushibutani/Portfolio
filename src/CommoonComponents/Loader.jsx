@@ -7,10 +7,7 @@ export const Loader = () => {
         <div class="loading">
           <div class="loading-text">
             <span class="loading-text-words">H</span>
-            <span class="loading-text-words">e</span>
-            <span class="loading-text-words">l</span>
-            <span class="loading-text-words">l</span>
-            <span class="loading-text-words">o</span>
+            <span class="loading-text-words">i</span>
             <span class="loading-text-words spac">T</span>
             <span class="loading-text-words">h</span>
             <span class="loading-text-words">e</span>

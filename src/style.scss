@@ -70,7 +70,6 @@ body {
   overflow: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif, Buffalo, "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Source Sans 3", sans-serif;
@@ -88,7 +87,7 @@ h1 {
 p {
   color: $color-p;
   font-family: "Source Sans 3", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 400;
 }
 
@@ -765,7 +764,7 @@ a {
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -846,7 +845,7 @@ a {
       }
 
       .project-title {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         margin-bottom: 5px;
       }
     }
@@ -995,7 +994,7 @@ a {
   height: 2.8rem;
   border: none;
   color: $color-white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: "Source Sans 3", sans-serif;
@@ -1024,7 +1023,7 @@ textarea {
 
 .form-p {
   letter-spacing: 1px;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   padding-bottom: 0.2rem;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
@@ -1343,6 +1342,9 @@ textarea {
     gap: 1rem;
 
     .home-text-section {
+      .typewriter-text {
+        font-size: 1.5rem;
+      }
       h1 {
         font-size: 2.5rem;
 
