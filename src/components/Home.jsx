@@ -36,10 +36,10 @@ export default function Home() {
   });
 
   const handleDownload = () => {
-    const resumeFilePath = "RushiResume.pdf";
+    const resumeFilePath = "Rushi_Butani_Resume.pdf";
     const anchor = document.createElement("a");
     anchor.href = resumeFilePath;
-    anchor.download = "Rushi Resume.pdf";
+    anchor.download = "Rushi_Butani_Resume.pdf";
     anchor.click();
   };
 
